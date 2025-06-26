@@ -1,0 +1,12 @@
+{
+    "raspberry-pi-pico.python3Path": "/opt/homebrew/bin/python3",
+    "workbench.colorTheme": "Ayu Mirage",
+    "vscode-serial-monitor.lineEnding": "\n",
+    "files.associations": {
+        "*.cpp": "cpp"
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "git.enableSmartCommit": true
+}
