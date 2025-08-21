@@ -8,5 +8,6 @@
     "github.copilot.nextEditSuggestions.enabled": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "explorer.confirmDragAndDrop": false
 }
