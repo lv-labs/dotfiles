@@ -1,0 +1,6 @@
+{
+    "raspberry-pi-pico.python3Path": "/usr/bin/python3",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "workbench.colorTheme": "Ayu Mirage"
+}
