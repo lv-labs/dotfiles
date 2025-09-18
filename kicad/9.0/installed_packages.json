@@ -1,0 +1,169 @@
+{
+    "packages": [
+        {
+            "current_version": "5.1.0",
+            "install_timestamp": 1758134348,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/bennymeg"
+                    },
+                    "name": "Benny Megidish"
+                },
+                "description": "JLC PCB fabrication toolkit\nAutomate PCB fabrication process in conjunction with JLC PCB",
+                "description_full": "Toolkit for automating PCB fabrication process with KiCad and JLC PCB. \n\n Features: \n• Generates gerber files in correct format for production. \n• Generates BOM file in correct format for production. \n• Generates Pick and Place file in correct format for assembly. \n• Automatic and manual component translations. \n• Many more unique additional features. \n♥ https://github.com/sponsors/bennymeg",
+                "identifier": "com.github.bennymeg.JLC-Plugin-for-KiCad",
+                "license": "Apache-2.0",
+                "maintainer": {
+                    "contact": {
+                        "github": "https://github.com/bennymeg"
+                    },
+                    "name": "Benny Megidish"
+                },
+                "name": "Fabrication Toolkit",
+                "resources": {
+                    "Sponsor": "https://github.com/sponsors/bennymeg",
+                    "homepage": "https://github.com/bennymeg/JLC-Plugin-for-KiCad"
+                },
+                "tags": [
+                    "jlc",
+                    "production",
+                    "fabrication",
+                    "toolkit"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "0dc6ad2fbd9e0be58cf2be029979871fe12b437416047b537aa57f9410eab290",
+                        "download_size": 20797,
+                        "download_url": "https://github.com/bennymeg/JLC-Plugin-for-KiCad/releases/download/5.1.0/JLC-Plugin-for-KiCad-5.1.0.zip",
+                        "install_size": 55836,
+                        "kicad_version": "6.00",
+                        "status": "stable",
+                        "version": "5.1.0"
+                    },
+                    {
+                        "download_sha256": "2285113715d24d6e581ee1bee4c8e2fd92ad92bc72737e1dd05f7c05210e0e67",
+                        "download_size": 17732,
+                        "download_url": "https://github.com/bennymeg/JLC-Plugin-for-KiCad/releases/download/4.5.0/JLC-Plugin-for-KiCad-4.5.0.zip",
+                        "install_size": 44106,
+                        "kicad_version": "6.00",
+                        "status": "stable",
+                        "version": "4.5.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "2024.02.25",
+            "install_timestamp": 1758134349,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/lethalbit",
+                        "mastodon": "https://chaos.social/@lethalbit",
+                        "website": "https://lethalbit.net"
+                    },
+                    "name": "Aki Van Ness"
+                },
+                "description": "A dark and vibrant color scheme by @lethalbit",
+                "description_full": "A dark and vibrant color scheme by @lethalbit",
+                "identifier": "net.lethalbit.arcana",
+                "license": "CC-BY-NC-SA-4.0",
+                "maintainer": {
+                    "contact": {
+                        "github": "https://github.com/lethalbit",
+                        "mastodon": "https://chaos.social/@lethalbit",
+                        "website": "https://lethalbit.net"
+                    },
+                    "name": "Aki Van Ness"
+                },
+                "name": "Arcana",
+                "resources": {
+                    "github": "https://github.com/lethalbit/arcana-kicad"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "1a1b0030cc8f5b60d2b8a680d9dbc34b0ea697f12eed47744c93956f70a047fb",
+                        "download_size": 13283,
+                        "download_url": "https://github.com/lethalbit/arcana-kicad/releases/download/2024.02.25/kicad-arcana.zip",
+                        "install_size": 20337,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "2024.02.25"
+                    },
+                    {
+                        "download_sha256": "a1192841d2a273df686bf97bcea5fff38f1ee7eaa84269403d42b124b8caaa05",
+                        "download_size": 13029,
+                        "download_url": "https://github.com/lethalbit/arcana-kicad/releases/download/2023.11.21/kicad-arcana.zip",
+                        "install_size": 20206,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "2023.11.21"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "2.10.0",
+            "install_timestamp": 1758134347,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "mail@qu1ck.org"
+                    },
+                    "name": "qu1ck"
+                },
+                "description": "Generate interactive html BOM to assist with manual pcb assembly",
+                "description_full": "This plugin generates a convenient Bill of Materials (BOM) listing with the ability to visually correlate and easily search for components and their placements on the PCB. It is particularly useful when hand-soldering a prototype, as it allows users to quickly find locations of components groups on the board. It is also possible to reverse lookup the component group by clicking on a footprint on the board drawing.\nThe plugin utilizes Pcbnew python API to read PCB data and render silkscreen, fab layer, footprint pads, text, and drawings. BOM table fields and grouping is fully configurable, additional columns, such as a manufacturer ID, can be added in Schematic editor and imported either through the netlist file, XML file generated by Eeschema's internal BOM tool, or from board file itself.\nThere is an option to include tracks/zones data as well as netlist information allowing dynamic highlight of nets on the board.",
+                "identifier": "org.openscopeproject.InteractiveHtmlBom",
+                "keep_on_update": [
+                    ".*/config\\.ini",
+                    ".*/web/user.*"
+                ],
+                "license": "MIT",
+                "name": "Interactive Html Bom",
+                "resources": {
+                    "Demos": "https://openscopeproject.org/InteractiveHtmlBomDemo/",
+                    "Forum": "https://forum.kicad.info/t/interactive-html-bom-plugin-for-kicad-5-0/11713",
+                    "Github": "https://github.com/openscopeproject/InteractiveHtmlBom",
+                    "Wiki": "https://github.com/openscopeproject/InteractiveHtmlBom/wiki"
+                },
+                "tags": [
+                    "bom",
+                    "pcbnew",
+                    "html",
+                    "assembly",
+                    "documentation"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "f40d509ba74bc2c879d1c39e3535f1551bb63dd4014ca28242632fb12a107c55",
+                        "download_size": 150310,
+                        "download_url": "https://github.com/openscopeproject/InteractiveHtmlBom/releases/download/v2.10.0/InteractiveHtmlBom_v2.10.0_pcm.zip",
+                        "install_size": 733010,
+                        "kicad_version": "6.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "2.10.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        }
+    ]
+}
