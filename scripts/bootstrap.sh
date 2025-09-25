@@ -3,81 +3,79 @@ set -euo pipefail
 
 DOTFILES="$HOME/Documents/lv-labs/dotfiles"
 
-echo "🔧 Bootstrapping environment..."
+echo "🔧 bootstrapping environment..."
 
 # ---------------------------------------------------------
-# 1. Homebrew + Brewfile
+# 1. homebrew + brewfile
 # ---------------------------------------------------------
 if ! command -v brew >/dev/null 2>&1; then
-  echo "🍺 Installing Homebrew..."
+  echo "🍺 installing homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo "📦 Installing from Brewfile..."
+echo "📦 installing from brewfile..."
 brew bundle --file="$DOTFILES/brewfile"
 
 # ---------------------------------------------------------
-# 2. Symlinks for configs
+# 2. symlinks for configs
 # ---------------------------------------------------------
 
-# Zsh
+# zsh
 ln -sf "$DOTFILES/zshrc" "$HOME/.zshrc"
 
-# Git
+# git
 ln -sf "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 [ -f "$DOTFILES/gitconfig-work" ] && ln -sf "$DOTFILES/gitconfig-work" "$HOME/.gitconfig-work"
 
-# SSH config (⚠️ manual keys still required from 1Password)
+# SSH config (manual keys still required from 1Password)
 if [ -f "$DOTFILES/ssh_config" ]; then
   mkdir -p "$HOME/.ssh"
   ln -sf "$DOTFILES/ssh_config" "$HOME/.ssh/config"
 fi
 
-# Ghostty
+# ghostty
 mkdir -p "$HOME/.config"
 ln -sfn "$DOTFILES/ghostty" "$HOME/.config/ghostty"
 
-# Aerospace
+# aerospace
 ln -sf "$DOTFILES/aerospace.toml" "$HOME/.aerospace.toml"
 
-# VS Code
+# vscode
 VSCODE_USER="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_USER"
-[ -f "$DOTFILES/vscode/settings.json" ] && ln -sf "$DOTFILES/vscode/settings.json" "$VSCODE_USER/settings.json"
+[ -f "$DOTFILES/vscode/settings.json" ] && ln -sf "$DOTFILES/vscode/settings.js!on" "$VSCODE_USER/settings.json"
 [ -f "$DOTFILES/vscode/keybindings.json" ] && ln -sf "$DOTFILES/vscode/keybindings.json" "$VSCODE_USER/keybindings.json"
 [ -d "$DOTFILES/vscode/snippets" ] && ln -sfn "$DOTFILES/vscode/snippets" "$VSCODE_USER/snippets"
 
-# KiCad prefs (skip thonk libs until setup_kicad.sh)
+# kicad prefs (skip thonk libs until setup_kicad.sh)
 mkdir -p "$HOME/Library/Preferences/kicad"
 [ -d "$DOTFILES/kicad/9.0" ] && ln -sfn "$DOTFILES/kicad/9.0" "$HOME/Library/Preferences/kicad/9.0"
 
-# Karabiner
+# karabiner
 mkdir -p "$HOME/.config"
 [ -d "$DOTFILES/karabiner" ] && ln -sfn "$DOTFILES/karabiner" "$HOME/.config/karabiner"
 
-echo "✨ Symlinks created."
+echo "✨ symlinks created."
 
 # ---------------------------------------------------------
-# 3. Pyenv (install latest Python and set global)
+# 3. pyenv (install latest python and set global)
 # ---------------------------------------------------------
 if command -v pyenv >/dev/null 2>&1; then
-  echo "🐍 Setting up latest Python via pyenv..."
+  echo "🐍 setting up latest python via pyenv..."
   latest=$(pyenv install --list | grep -E "^[[:space:]]*3\.[0-9]+\.[0-9]+$" | tail -1 | tr -d ' ')
   pyenv install -s "$latest"
   pyenv global "$latest"
-  echo "✅ pyenv set global Python to $latest"
+  echo "✅ pyenv set global python to $latest"
 else
-  echo "⚠️ pyenv not found (check Brewfile install?)"
+  echo "⚠️ pyenv not found (check brewfile install?)"
 fi
 
-# ---------------------------------------------------------
-# 4. Reminders
-# ---------------------------------------------------------
+
 echo
-echo "✅ Bootstrap complete!"
+echo "✅ bootstrap complete!"
 echo "Next steps:"
-echo "  1. Restore SSH keys from 1Password → ~/.ssh/id_ed25519_*"
-echo "  2. Run 'ssh-add' to load them into agent"
-echo "  3. Switch dotfiles repo remote to SSH if desired"
-echo "  4. Clone work repos (e.g. thonk-kicad-lib) once SSH works"
-echo "  5. Run ./setup_kicad.sh to finish KiCad setup"
+echo "  1. restore SSH keys from 1Password → ~/.ssh/id_ed25519_*"
+echo "  2. run 'ssh-add' to load them into agent"
+echo "  3. switch dotfiles repo remote to SSH if desired"
+echo "  4. clone work repos (e.g. thonk-kicad-lib) once SSH works"
+echo "  5. run ./setup_kicad.sh to finish kicad setup"
