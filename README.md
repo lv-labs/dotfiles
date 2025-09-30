@@ -26,25 +26,31 @@ chmod +x bootstrap.sh
 ```
 
 
-restore SSH keys
+generate SSH keys
 
 
-1. copy private key from 1Password → paste into ~/.ssh/id_ed25519_personal
+1. new personal ssh key
 ```bash
-nano ~/.ssh/id_ed25519_personal
+ssh-keygen -t ed25519 -C "your_personal_email@example.com" -f ~/.ssh/id_ed25519_personal
 chmod 600 ~/.ssh/id_ed25519_personal
 ```
 
 repeat for id_ed25519_work.
 
 
-2. add .pub files.
 
-3. add to agent:
+2. add to agent:
 ```bash
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519_personal
 ssh-add ~/.ssh/id_ed25519_work
+```
+
+3. upload to github
+
+```bash
+cat ~/.ssh/id_ed25519_personal.pub
+cat ~/.ssh/id_ed25519_work.pub
 ```
 
 4. set dotfiles to ssh
