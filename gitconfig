@@ -1,9 +1,0 @@
-[user]
-	name = lv-labs
-	email = luke@lv-labs.com
-
-[core]
-    sshCommand = ssh -i ~/.ssh/id_ed25519_personal
-
-[includeIf "gitdir:~/Documents/thonk/"]
-	path = ~/.gitconfig-work
