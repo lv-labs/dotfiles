@@ -21,7 +21,7 @@ fi
 
 # set environment variables.
 export THONK_LIB_DIR="$TARGET"
-export THONK_3D_MODELS="$THONK_LIB_DIR/3DModels"
+export THONK_3D_MODELS="$THONK_LIB_DIR/3d"
 
 # set them globally for GUI apps (Dock/Finder)
 launchctl setenv THONK_LIB_DIR "$THONK_LIB_DIR"
