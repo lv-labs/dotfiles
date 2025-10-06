@@ -3,5 +3,7 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "workbench.colorTheme": "Ayu Mirage",
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "extensions.autoCheckUpdates": false,
+    "extensions.autoUpdate": false
 }
