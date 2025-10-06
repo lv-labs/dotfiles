@@ -37,21 +37,40 @@ alias ll="ls -lh"
 alias la="ls -lha"
 
 alias zedit="nano ~/.zshrc"
-alias zreload='source ~/.zshrc && echo "Zsh config reloaded ✅"'
+alias zrl='source ~/.zshrc && echo "Zsh config reloaded ✅"'
+
+unalias gst 2>/dev/null
+
+gst() {
+  local dir
+  local base_dir="${1:-.}" # default to current directory if none passed
+
+  find "$base_dir" -type d -name ".git" | while read -r dir; do
+    repo_dir="$(dirname "$dir")"
+    echo "🔹 Repo: $repo_dir"
+    git -C "$repo_dir" status -s
+    echo
+  done
+}
 
 # git aliases
 alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
 alias gl="git pull"
+alias gs="git status"
 
 # One-shot add-all + commit
-gitac() {
+gac() {
   git add .
   git commit -m "$*"
+  git push
 }
+
 
 alias mkvenv="python -m venv .venv"
 alias actvenv="source .venv/bin/activate"
 
 alias bu='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
+
+export PATH="/opt/homebrew/bin:$PATH"
