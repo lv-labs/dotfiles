@@ -153,5 +153,5 @@
   (lib (name "Transistor_Power_Module")(type "KiCad")(uri "${KICAD9_FOOTPRINT_DIR}/Transistor_Power_Module.pretty")(options "")(descr "Transistor Power Modules"))
   (lib (name "Valve")(type "KiCad")(uri "${KICAD9_FOOTPRINT_DIR}/Valve.pretty")(options "")(descr "Valve"))
   (lib (name "Varistor")(type "KiCad")(uri "${KICAD9_FOOTPRINT_DIR}/Varistor.pretty")(options "")(descr "Varistor"))
-  (lib (name "Thonk")(type "KiCad")(uri "$THONK_LIB_DIR/footprints/Thonk.pretty")(options "")(descr ""))
+  (lib (name "Thonk")(type "KiCad")(uri "/Users/luke/Documents/thonk/thonk-kicad-lib/footprints/Thonk.pretty")(options "")(descr ""))
 )

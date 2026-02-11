@@ -30,6 +30,9 @@ eval "$(pyenv init -)"
 # zsh autosuggestions color (more visible)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#888888'
 
+# KiCad app binaries (GerbView, Pcbnew, etc.)
+export PATH="/Applications/KiCad/KiCad.app/Contents/Applications/gerbview.app/Contents/MacOS:$PATH"
+
 # --------------------
 # aliases
 # --------------------
@@ -41,6 +44,7 @@ alias zrl='source ~/.zshrc && echo "Zsh config reloaded ✅"'
 
 unalias gst 2>/dev/null
 
+# search current diretory and subdirectories for git repos and show their status
 gst() {
   local dir
   local base_dir="${1:-.}" # default to current directory if none passed
@@ -72,5 +76,7 @@ alias mkvenv="python -m venv .venv"
 alias actvenv="source .venv/bin/activate"
 
 alias bu='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
+
+alias cgerb="~/.cgerb.sh"
 
 export PATH="/opt/homebrew/bin:$PATH"

@@ -1,22 +1,22 @@
 {
   "action_plugins": [],
   "appearance": {
-    "color_theme": "/Users/luke/Documents/KiCad/9.0/3rdparty/colors/net_lethalbit_arcana/Arcana.json"
+    "color_theme": "GBL"
   },
   "aui": {
     "appearance_expand_layer_display": false,
     "appearance_expand_net_display": false,
     "appearance_panel_tab": 0,
     "net_inspector_width": -1,
-    "properties_panel_width": -1,
+    "properties_panel_width": 300,
     "properties_splitter_proportion": 0.5,
-    "right_panel_width": -1,
+    "right_panel_width": 209,
     "search_panel_dock_direction": 3,
-    "search_panel_height": -1,
-    "search_panel_width": -1,
+    "search_panel_height": 110,
+    "search_panel_width": 284,
     "show_layer_manager": true,
     "show_net_inspector": false,
-    "show_properties": false,
+    "show_properties": true,
     "show_search": false
   },
   "cleanup": {
@@ -110,12 +110,12 @@
   },
   "footprint_chooser": {
     "filter_on_pin_count": false,
-    "height": -1,
-    "sash_h": -1,
-    "sash_v": -1,
+    "height": 680,
+    "sash_h": 440,
+    "sash_v": 335,
     "sort_mode": 0,
     "use_fp_filters": false,
-    "width": -1
+    "width": 880
   },
   "footprint_viewer": {
     "autozoom": true,
@@ -496,18 +496,38 @@
     "use_dlg_layer_selection": true
   },
   "lib_tree": {
-    "column_widths": null,
-    "columns": [],
-    "open_libs": []
+    "column_widths": {
+      "Description": 104,
+      "Item": 300
+    },
+    "columns": [
+      "Item",
+      "Description"
+    ],
+    "open_libs": [
+      "-- Recently Used --",
+      "Thonk",
+      "Connector",
+      "Connector_Amphenol",
+      "Connector_Audio",
+      "Connector_BarrelJack",
+      "Connector_Coaxial",
+      "Connector_Molex",
+      "Connector_TE-Connectivity",
+      "Display",
+      "Inductor_SMD",
+      "Panelization",
+      "Potentiometer_THT"
+    ]
   },
   "meta": {
     "version": 5
   },
   "netlist": {
     "associate_by_ref_sch": false,
-    "delete_extra_footprints": false,
+    "delete_extra_footprints": true,
     "delete_shorting_tracks": false,
-    "report_filter": -1,
+    "report_filter": 58,
     "update_footprints": true
   },
   "pcb_display": {
@@ -525,7 +545,7 @@
     "pad_numbers": true,
     "ratsnest_curved": false,
     "ratsnest_footprint": true,
-    "ratsnest_global": true,
+    "ratsnest_global": false,
     "ratsnest_thickness": 0.5,
     "show_page_borders": true,
     "text_fill": true,
@@ -587,7 +607,17 @@
     "selection_zoom": 1
   },
   "system": {
-    "file_history": [],
+    "file_history": [
+      "/Users/luke/Documents/lv-labs/lab-storage/kicad/midicv/midicv.kicad_pcb",
+      "/Users/luke/Documents/lv-labs/lab-storage/kicad/mixer/mixer.kicad_pcb",
+      "/Users/luke/Documents/thonk/r-and-d/luke/pi_dsp/pi_dsp.kicad_pcb",
+      "/Users/luke/Documents/lv-labs/lab-storage/kicad/poly/poly.kicad_pcb",
+      "/Users/luke/Documents/thonk/thonk-debug-probe/probe_hardware/thonk_debug_probe_v0.2/thonk_debug_probe_v0.2.kicad_pcb",
+      "/Users/luke/Documents/thonk/thonk-modules/triple-mod/test/triple-mod_test_adapter_v0.3/triple-mod_test_adapter_v0.3.kicad_pcb",
+      "/Users/luke/Documents/thonk/thonk-modules/double_bubble/test/double_bubble_test_adapter_v0.2/double_bubble_test_adapter_v0.2.kicad_pcb",
+      "/Users/luke/Documents/thonk/thonk-modules/double_bubble/double_bubble_v1_main_board/double_bubble_v1_main_board.kicad_pcb",
+      "/Users/luke/Documents/thonk/test-system/hw/test_data_board_v0.5/test_data_board_v0.5.kicad_pcb"
+    ],
     "first_run_shown": false,
     "last_footprint3d_dir": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels/",
     "last_footprint_lib_dir": "/Users/luke/Documents/thonk/thonk-kicad-lib/footprints/Thonk.pretty",
@@ -596,6 +626,36 @@
     "max_undo_items": 0,
     "show_import_issues": true,
     "units": 1
+  },
+  "tools": {
+    "pns": {
+      "auto_posture": true,
+      "can_violate_drc": false,
+      "corner_mode": 0,
+      "effort": 1,
+      "fix_all_segments": true,
+      "follow_mouse": true,
+      "free_angle_mode": false,
+      "jump_over_obstacles": false,
+      "meta": {
+        "version": 0
+      },
+      "mode": 2,
+      "optimize_dragged_track": false,
+      "remove_loops": true,
+      "shove_iteration_limit": 250,
+      "shove_time_limit": 1000,
+      "shove_vias": true,
+      "smart_pads": true,
+      "smooth_dragged_segments": true,
+      "snap_to_pads": true,
+      "snap_to_tracks": true,
+      "start_diagonal": false,
+      "suggest_finish": false,
+      "via_force_prop_iteration_limit": 40,
+      "walkaround_hug_length_threshold": 1.5,
+      "walkaround_iteration_limit": 40
+    }
   },
   "window": {
     "cursor": {
@@ -608,7 +668,7 @@
       "axes_enabled": false,
       "fast_grid_1": 15,
       "fast_grid_2": 16,
-      "last_size": 15,
+      "last_size": 16,
       "line_width": 1.0,
       "min_spacing": 10.0,
       "override_connected": false,
@@ -742,11 +802,11 @@
     },
     "maximized": false,
     "mru_path": "",
-    "perspective": "",
-    "pos_x": 0,
-    "pos_y": 0,
-    "size_x": 0,
-    "size_y": 0,
+    "perspective": "layout2|name=MainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=1099;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=AuxToolbar;caption=;state=139644;dir=1;layer=5;row=0;pos=0;prop=100000;bestw=1100;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=26;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=OptToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=670;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ToolsToolbar;caption=;state=139596;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=739;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Appearance;state=1532;dir=2;layer=4;row=0;pos=0;prop=100000;bestw=200;besth=-1;minw=200;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=440;floath=960|name=SelectionFilter;caption=Selection Filter;state=1532;dir=2;layer=4;row=0;pos=1;prop=0;bestw=209;besth=-1;minw=209;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=209;floath=106|name=PropertiesManager;caption=Properties;state=2098684;dir=4;layer=5;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=300;floath=200|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=400;besth=168;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=NetInspector;caption=Net Inspector;state=2098686;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=300;floath=200|name=Search;caption=Search;state=2098686;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=180;besth=100;minw=180;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=480;floath=200|dock_size(1,6,0)=34|dock_size(1,5,0)=34|dock_size(3,6,0)=26|dock_size(4,3,0)=34|dock_size(2,3,0)=34|dock_size(2,4,0)=209|dock_size(5,0,0)=402|dock_size(4,5,0)=300|",
+    "pos_x": 12,
+    "pos_y": 52,
+    "size_x": 1776,
+    "size_y": 1104,
     "zoom_factors": [
       0.13,
       0.22,
@@ -769,6 +829,6 @@
     ]
   },
   "zones": {
-    "net_sort_mode": -1
+    "net_sort_mode": 1
   }
 }

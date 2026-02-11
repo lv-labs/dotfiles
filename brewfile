@@ -1,25 +1,53 @@
 tap "felixkratz/formulae"
 tap "lv-labs/tap"
 tap "nikitabobko/tap"
+# Cross-platform make
+brew "cmake"
+# USB programmer
+brew "dfu-util"
+# Distributed revision control system
 brew "git"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Python version management
 brew "pyenv"
+# General-purpose data compression with high compression ratio
 brew "xz"
+# A window border system for macOS
 brew "felixkratz/formulae/borders"
-cask "aerospace"
-cask "afterdark"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "nikitabobko/tap/aerospace"
+# Image editing and design software
+cask "affinity"
+# Menu bar utility app
+cask "lv-labs/tap/afterdark"
+# Application uninstaller
 cask "appcleaner"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-noto-sans"
+# Pre-built GNU bare-metal toolchain for 32-bit Arm processors
+cask "gcc-arm-embedded"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Free and open-source media player
 cask "iina"
+# Menu bar manager
 cask "jordanbaird-ice"
+# File archiver
 cask "keka"
+# Electronics design automation suite
 cask "kicad"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Music streaming service
 cask "spotify"
-cask "superwhisper"
+# Open-source BitTorrent client
 cask "transmission"
+# Open-source code editor
 cask "visual-studio-code"
+# Gecko based web browser
 cask "zen"
+vscode "github.copilot-chat"
 vscode "marus25.cortex-debug"
 vscode "mcu-debug.debug-tracker-vscode"
 vscode "mcu-debug.memory-view"
@@ -36,4 +64,4 @@ vscode "ms-vscode.cpptools-themes"
 vscode "ms-vscode.vscode-serial-monitor"
 vscode "paulober.pico-w-go"
 vscode "raspberry-pi.raspberry-pi-pico"
-vscode "teabyii.ayu"
+vscode "zhuangtongfa.material-theme"

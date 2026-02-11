@@ -2,7 +2,7 @@
     "raspberry-pi-pico.python3Path": "/usr/bin/python3",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
-    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.colorTheme": "One Dark Pro",
     "security.workspace.trust.untrustedFiles": "open",
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false

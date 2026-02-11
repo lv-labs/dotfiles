@@ -1,6 +1,47 @@
 {
     "packages": [
         {
+            "current_version": "1.1",
+            "install_timestamp": 1761393244,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://alexanderbrevig.com"
+                    },
+                    "name": "Alexander Brevig"
+                },
+                "description": "A KiCAD adoptation of the Gruvbox theme",
+                "description_full": "Gruvbox is a popular theme. Gruvbox all the things!",
+                "identifier": "com.github.alexanderbrevig.kicad-gruvbox-theme",
+                "license": "MIT",
+                "maintainer": {
+                    "contact": {
+                        "web": "https://alexanderbrevig.com"
+                    },
+                    "name": "Alexander Brevig"
+                },
+                "name": "Gruvbox",
+                "resources": {
+                    "homepage": "https://github.com/alexanderbrevig/kicad-gruvbox-theme"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "637ea8efe153cc64380c7e8bf78b92d65f80c901c234dc4d0229cf8dc55b94df",
+                        "download_size": 12915,
+                        "download_url": "https://github.com/AlexanderBrevig/kicad-gruvbox-theme/releases/download/v1.1/Gruvbox_v1.1.zip",
+                        "install_size": 21285,
+                        "kicad_version": "6",
+                        "status": "stable",
+                        "version": "1.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
             "current_version": "5.1.0",
             "install_timestamp": 1758134348,
             "package": {
@@ -34,6 +75,15 @@
                 "type": "plugin",
                 "versions": [
                     {
+                        "download_sha256": "4561b8feeeb37446caabeb815bc56b6e863760604bd1342781bccc91c767077a",
+                        "download_size": 21235,
+                        "download_url": "https://github.com/bennymeg/JLC-Plugin-for-KiCad/releases/download/5.2.0/JLC-Plugin-for-KiCad-5.2.0.zip",
+                        "install_size": 58037,
+                        "kicad_version": "6.00",
+                        "status": "stable",
+                        "version": "5.2.0"
+                    },
+                    {
                         "download_sha256": "0dc6ad2fbd9e0be58cf2be029979871fe12b437416047b537aa57f9410eab290",
                         "download_size": 20797,
                         "download_url": "https://github.com/bennymeg/JLC-Plugin-for-KiCad/releases/download/5.1.0/JLC-Plugin-for-KiCad-5.1.0.zip",
@@ -50,6 +100,204 @@
                         "kicad_version": "6.00",
                         "status": "stable",
                         "version": "4.5.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "9.0.6",
+            "install_timestamp": 1761429462,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "js.reynaud@gmail.com"
+                    },
+                    "name": "jsreynaud"
+                },
+                "description": "ViaStitching and more tools ",
+                "description_full": "Via stitching action tool and circular zone builder action tool. Use the action menu/toolbar feature.",
+                "identifier": "com.github.jsreynaud.kicad-action-scripts",
+                "license": "GPL-2.0",
+                "name": "kicad-action-scripts",
+                "resources": {
+                    "Github": "https://github.com/jsreynaud/kicad-action-scripts",
+                    "Readme": "https://github.com/jsreynaud/kicad-action-scripts/blob/master/README.md"
+                },
+                "tags": [
+                    "annular",
+                    "pcbnew",
+                    "dxf",
+                    "grid",
+                    "mcad"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "0eeafd1093962bf8fc18a38cbabd0ad9af64c0ad2d30e5a222a541e7adde92ff",
+                        "download_size": 51943,
+                        "download_url": "https://github.com/jsreynaud/kicad-action-scripts/releases/download/v9.0-0.7.0/kicad-action-scripts_v9.0-0.7.0.zip",
+                        "install_size": 296475,
+                        "kicad_version": "9.0",
+                        "kicad_version_max": "9.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "9.0.7"
+                    },
+                    {
+                        "download_sha256": "9b3768f085eaf0bc3ab7e96dd161f3d63580ab0057e1c572c5334d70d3158114",
+                        "download_size": 51954,
+                        "download_url": "https://github.com/jsreynaud/kicad-action-scripts/releases/download/v9.0-0.6.0/kicad-action-scripts_v9.0-0.6.0.zip",
+                        "install_size": 296521,
+                        "kicad_version": "9.0",
+                        "kicad_version_max": "9.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "9.0.6"
+                    },
+                    {
+                        "download_sha256": "79f0c0b4b0a2d99d1606a3d391139eba3b9990447a9a23f8d9c3fccab0d861c0",
+                        "download_size": 51689,
+                        "download_url": "https://github.com/jsreynaud/kicad-action-scripts/releases/download/v8.0-0.5.0/kicad-action-scripts_v8.0-0.5.0.zip",
+                        "install_size": 286862,
+                        "kicad_version": "8.0",
+                        "kicad_version_max": "8.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "8.0.5"
+                    },
+                    {
+                        "download_sha256": "922f5daac3ad5daeb76fb128ff509a108b37ddfcd4d8bf0902a95e1ab7f3c042",
+                        "download_size": 51780,
+                        "download_url": "https://github.com/jsreynaud/kicad-action-scripts/releases/download/v7.0-0.4.0/kicad-action-scripts_v7.0-0.4.0.zip",
+                        "install_size": 288098,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "7.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "7.0.4"
+                    },
+                    {
+                        "download_sha256": "643ea19928db3a8451d044e9cfa42cd3ee452bc8a72bfc6b0d60f68c1748e5cc",
+                        "download_size": 51208,
+                        "download_url": "https://github.com/jsreynaud/kicad-action-scripts/releases/download/v7.0-0.3.0/kicad-action-scripts_v7.0-0.3.0.zip",
+                        "install_size": 276785,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "7.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "7.0.3"
+                    },
+                    {
+                        "download_sha256": "976525775d5a2d74be17bc2f6b23e4a660cd6554686eb8c4990234b052be2ede",
+                        "download_size": 52163,
+                        "download_url": "https://github.com/jsreynaud/kicad-action-scripts/releases/download/v6.0-0.2.0/kicad-action-scripts_v6.0-0.2.0.zip",
+                        "install_size": 276266,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "6.0.1"
+                    },
+                    {
+                        "download_sha256": "3790d1ca1e4dc9b0d2fa68c61b3afa8453c4bf6a11dc3b46597195b6bf9126c2",
+                        "download_size": 51235,
+                        "download_url": "https://github.com/jsreynaud/kicad-action-scripts/releases/download/v5.1-0.2.0/kicad-action-scripts_v5.1-0.2.0.zip",
+                        "install_size": 297879,
+                        "kicad_version": "5.1",
+                        "kicad_version_max": "5.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "5.1.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "2.4",
+            "install_timestamp": 1764883903,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "perigoso@riseup.net"
+                    },
+                    "name": "Rafael Silva (perigoso)"
+                },
+                "description": "Keyboard switch footprint library",
+                "description_full": "This package contains footprints for popular keyboard switches, these are generated automatically.\nSupported footprints:\n\n- Cherry MX or equivalent, Plate and PCB mount.\n- Alps/Matias or equivalent.\n- Hybrid footprints for Cherry MX and Alps/Matias (accepts both).\n- Kailh Choc low profile switches (version 1).\n- Kailh Hotswap sockets for Cherry MX equivalent switches.\n",
+                "identifier": "com.github.perigoso.keyswitch-kicad-library",
+                "license": "CC-BY-SA-4.0",
+                "name": "Keyswitch Kicad Library",
+                "resources": {
+                    "Github": "https://github.com/perigoso/keyswitch-kicad-library"
+                },
+                "tags": [
+                    "footprint",
+                    "library",
+                    "keyswitch",
+                    "keyboard"
+                ],
+                "type": "library",
+                "versions": [
+                    {
+                        "download_sha256": "b38d56323acb91ad660567340ca938c5b4a83a27eea52308ef14aa7857b0071b",
+                        "download_size": 7808392,
+                        "download_url": "https://github.com/kiswitch/keyswitch-kicad-library/releases/download/v2.4/keyswitch-kicad-library.zip",
+                        "install_size": 37552156,
+                        "kicad_version": "5.1",
+                        "status": "stable",
+                        "version": "2.4"
+                    },
+                    {
+                        "download_sha256": "869fe4ce7e988f6cbbf8c0411d94c1a5c32244bdef6eca589048e7cc31e341a5",
+                        "download_size": 7922892,
+                        "download_url": "https://github.com/kiswitch/keyswitch-kicad-library/releases/download/v2.3/keyswitch-kicad-library.zip",
+                        "install_size": 38217581,
+                        "kicad_version": "5.1",
+                        "status": "stable",
+                        "version": "2.3"
+                    },
+                    {
+                        "download_sha256": "e3cfede28eb7cf1d590d149bfc292fa8d772bc3b33bc52b83a87bcae1ba3f7e8",
+                        "download_size": 7539262,
+                        "download_url": "https://github.com/kiswitch/keyswitch-kicad-library/releases/download/v2.2/keyswitch-kicad-library.zip",
+                        "install_size": 36095418,
+                        "kicad_version": "5.1",
+                        "status": "stable",
+                        "version": "2.2"
                     }
                 ]
             },
@@ -158,6 +406,53 @@
                         ],
                         "status": "stable",
                         "version": "2.10.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.2",
+            "install_timestamp": 1769373850,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "mail@qu1ck.org"
+                    },
+                    "name": "qu1ck"
+                },
+                "description": "Batch resize, scale, mirror graphics, tracks, zones, footprints and other items in the PCB editor.",
+                "description_full": "Batch resize, scale, mirror graphics, tracks, zones, footprints and other items in the PCB editor.\nInspired by free transform tool in graphics editors.\nImportant notes:\n• Mirror does not change layers, it transforms in place\n• When a singular footprint is selected it's items are scaled so the footprint itself will become larger/smaller\n• When more than one item is selected footprints are not changed or rescaled, only repositioned/rotated\n• Pads are not rescaled, only repositioned/rotated\n• Rotation center is geometrical center of combined bounding box of all selected items",
+                "identifier": "org.openscopeproject.TransformIt",
+                "license": "MIT",
+                "name": "Transform It",
+                "resources": {
+                    "Forum": "https://forum.kicad.info/t/transformit-plugin-batch-scale-mirror-rotate-all-the-things/40336",
+                    "Github": "https://github.com/openscopeproject/TransformIt"
+                },
+                "tags": [
+                    "scale",
+                    "rotate",
+                    "mirror",
+                    "graphics"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "7d93db4f0444ada004861ce19ce5c6c99f00c5b8e4cd3c32e02e45a7faa3f189",
+                        "download_size": 10063,
+                        "download_url": "https://github.com/openscopeproject/TransformIt/releases/download/v1.2/TransformIt_v1.2_pcm.zip",
+                        "install_size": 24964,
+                        "kicad_version": "7.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.2"
                     }
                 ]
             },

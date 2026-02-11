@@ -28,7 +28,7 @@
   },
   "environment": {
     "vars": {
-      "THONK_3D_MODELS": "$THONK_3D_MODELS",
+      "THONK_3D_MODELS": "/Users/luke/Documents/thonk/thonk-kicad-lib/3d",
       "THONK_LIB_DIR": "$THONK_LIB_DIR"
     }
   },
@@ -96,6 +96,6 @@
     "pdf_viewer_name": "",
     "text_editor": "/usr/bin/open -e",
     "use_system_pdf_viewer": true,
-    "working_dir": "/Applications/KiCad"
+    "working_dir": "/Users/luke/Documents/lv-labs/lab-storage/kicad/midicv"
   }
 }

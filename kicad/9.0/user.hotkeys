@@ -102,11 +102,12 @@ common.Control.saveAll
 common.Control.saveAs	Cmd+Shift+S	
 common.Control.saveCopy		
 common.Control.selectColumns		
-common.Control.show3DViewer	Option+3	
+common.Control.show3DViewer	Cmd+3	
 common.Control.showContextMenu		
 common.Control.showDatasheet	D	
 common.Control.showFootprintBrowser		
 common.Control.showFootprintEditor		
+common.Control.showLibraryTable		
 common.Control.showLibraryTree		
 common.Control.showProjectManager		
 common.Control.showProperties		
