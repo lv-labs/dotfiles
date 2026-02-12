@@ -26,16 +26,38 @@ chmod +x bootstrap.sh
 ```
 
 
-generate SSH keys
+add SSH keys
 
 
 1. new personal ssh key
 ```bash
-ssh-keygen -t ed25519 -C "your_personal_email@example.com" -f ~/.ssh/id_ed25519_personal
-chmod 600 ~/.ssh/id_ed25519_personal
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
 ```
 
-repeat for id_ed25519_work.
+# create and paste private key
+```bash
+nano ~/.ssh/id_ed25519_personal
+```
+# paste the private key content, save (Ctrl+O, Enter, Ctrl+X)
+
+# create and paste public key
+```bash
+nano ~/.ssh/id_ed25519_personal.pub
+```
+# paste, save
+
+# repeat for work
+```bash
+nano ~/.ssh/id_ed25519_work
+nano ~/.ssh/id_ed25519_work.pub
+```
+
+# fix permissions
+```bash
+chmod 600 ~/.ssh/id_ed25519_personal ~/.ssh/id_ed25519_work
+chmod 644 ~/.ssh/id_ed25519_personal.pub ~/.ssh/id_ed25519_work.pub
+```
 
 
 

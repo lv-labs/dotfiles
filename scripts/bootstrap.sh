@@ -54,11 +54,12 @@ ln -sf "$DOTFILES/gitconfig" "$HOME/.gitconfig"
 [ -f "$DOTFILES/gitconfig-work" ] && ln -sf "$DOTFILES/gitconfig-work" "$HOME/.gitconfig-work"
 
 # ssh config (keys generated manually after bootstrap)
-if [ -f "$DOTFILES/ssh_config" ]; then
+if [ -f "$DOTFILES/.ssh/config" ]; then
   mkdir -p "$HOME/.ssh"
-  ln -sf "$DOTFILES/ssh_config" "$HOME/.ssh/config"
+  chmod 700 "$HOME/.ssh"
+  ln -sf "$DOTFILES/.ssh/config" "$HOME/.ssh/config"
+  chmod 600 "$HOME/.ssh/config"
 fi
-
 # ghostty
 mkdir -p "$HOME/.config"
 ln -sfn "$DOTFILES/ghostty" "$HOME/.config/ghostty"
