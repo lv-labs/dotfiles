@@ -1,0 +1,6 @@
+[user]
+    name = Luke Vosper
+    email = luke@lv-labs.com
+
+[includeIf "gitdir:~/Documents/thonk/"]
+    path = ~/.gitconfig-work
