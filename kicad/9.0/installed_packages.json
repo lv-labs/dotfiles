@@ -2,7 +2,7 @@
     "packages": [
         {
             "current_version": "1.1",
-            "install_timestamp": 1761393244,
+            "install_timestamp": 1771364383,
             "package": {
                 "author": {
                     "contact": {
@@ -42,8 +42,8 @@
             "repository_name": "KiCad official repository"
         },
         {
-            "current_version": "5.1.0",
-            "install_timestamp": 1758134348,
+            "current_version": "5.2.0",
+            "install_timestamp": 1771364309,
             "package": {
                 "author": {
                     "contact": {
@@ -84,15 +84,6 @@
                         "version": "5.2.0"
                     },
                     {
-                        "download_sha256": "0dc6ad2fbd9e0be58cf2be029979871fe12b437416047b537aa57f9410eab290",
-                        "download_size": 20797,
-                        "download_url": "https://github.com/bennymeg/JLC-Plugin-for-KiCad/releases/download/5.1.0/JLC-Plugin-for-KiCad-5.1.0.zip",
-                        "install_size": 55836,
-                        "kicad_version": "6.00",
-                        "status": "stable",
-                        "version": "5.1.0"
-                    },
-                    {
                         "download_sha256": "2285113715d24d6e581ee1bee4c8e2fd92ad92bc72737e1dd05f7c05210e0e67",
                         "download_size": 17732,
                         "download_url": "https://github.com/bennymeg/JLC-Plugin-for-KiCad/releases/download/4.5.0/JLC-Plugin-for-KiCad-4.5.0.zip",
@@ -108,8 +99,8 @@
             "repository_name": "KiCad official repository"
         },
         {
-            "current_version": "9.0.6",
-            "install_timestamp": 1761429462,
+            "current_version": "9.0.7",
+            "install_timestamp": 1771364308,
             "package": {
                 "author": {
                     "contact": {

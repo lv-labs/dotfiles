@@ -4,7 +4,7 @@ font-family = "JetBrainsMono Nerd Font"
 font-size = 13
 
 # Window
-background-opacity = 0.98
+background-opacity = 0.8
 window-padding-x = 8
 window-padding-y = 8
 cursor-style = bar

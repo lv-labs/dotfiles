@@ -75,7 +75,8 @@ gac() {
 alias mkvenv="python -m venv .venv"
 alias actvenv="source .venv/bin/activate"
 
-alias bu='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
+# alias bu='brew update && brew upgrade && brew upgrade --cask && brew cleanup && brew autoremove'
+alias bu='brew update; brew upgrade; brew upgrade --cask; brew cleanup; brew autoremove'
 
 alias cgerb="~/.cgerb.sh"
 

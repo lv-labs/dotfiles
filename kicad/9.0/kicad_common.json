@@ -96,6 +96,6 @@
     "pdf_viewer_name": "",
     "text_editor": "/usr/bin/open -e",
     "use_system_pdf_viewer": true,
-    "working_dir": "/Applications/KiCad"
+    "working_dir": "/Users/luke/Documents/lv-labs/lab-storage/kicad/midicv"
   }
 }
