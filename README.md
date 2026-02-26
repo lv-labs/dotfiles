@@ -39,7 +39,7 @@ chmod 700 ~/.ssh
 ```bash
 nano ~/.ssh/id_ed25519_personal
 ```
-# paste the private key content, save (Ctrl+O, Enter, Ctrl+X)
+# paste the private key from bitwarden
 
 # create and paste public key
 ```bash
@@ -75,18 +75,18 @@ cat ~/.ssh/id_ed25519_personal.pub
 cat ~/.ssh/id_ed25519_work.pub
 ```
 
-4. set dotfiles to ssh
+4. set dotfiles remote to ssh
 ```bash
 cd ~/Documents/lv-labs/dotfiles
-git remote set-url origin git@github.com-personal:lv-labs/dotfiles.git
+git remote set-url origin git@lv-labs:lv-labs/dotfiles.git
 ```
 
 
-4. test:
+5. test:
 
 ```bash
-ssh -T git@github.com-personal
-ssh -T git@github.com-work
+ssh -T git@lv-labs
+ssh -T git@thonk
 ```
 
 # finalise setup with work kicad libraries
@@ -95,5 +95,3 @@ cd ~/Documents/lv-labs/dotfiles/scripts
 chmod +x setup_kicad.sh
 ./setup_kicad.sh
 ```
-
-
