@@ -4,6 +4,5 @@
     "editor.formatOnPaste": true,
     "workbench.colorTheme": "One Dark Pro Night Flat",
     "security.workspace.trust.untrustedFiles": "open",
-    "extensions.autoCheckUpdates": false,
-    "extensions.autoUpdate": false
+    "extensions.autoCheckUpdates": false
 }
