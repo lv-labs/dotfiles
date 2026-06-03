@@ -1,0 +1,28 @@
+#!/bin/sh
+
+exec /usr/bin/osascript <<'APPLESCRIPT'
+tell application "Finder"
+	if (count of selection) > 0 then
+		set selectedItem to item 1 of selection
+		if class of selectedItem is folder then
+			set finderDir to selectedItem as alias
+		else
+			set finderDir to container of selectedItem as alias
+		end if
+	else if (count of windows) > 0 then
+		set finderDir to target of front window as alias
+	else
+		set finderDir to desktop as alias
+	end if
+end tell
+
+set dirPath to POSIX path of finderDir
+
+tell application "/Applications/Ghostty.app"
+	set cfg to new surface configuration
+	set initial working directory of cfg to dirPath
+
+	set win to new window with configuration cfg
+	activate window win
+end tell
+APPLESCRIPT

@@ -16,5 +16,21 @@
     {
         "key": "cmd+t",
         "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "alt+s",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "shift+alt+s",
+        "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "alt+cmd+b",
+        "command": "-workbench.action.toggleAuxiliaryBar"
     }
 ]
