@@ -10,5 +10,6 @@
     "[csv]": {
         "editor.inlayHints.maximumLength": 0
     },
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "git.confirmSync": false
 }
