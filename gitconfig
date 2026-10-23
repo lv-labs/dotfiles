@@ -4,3 +4,5 @@
 
 [includeIf "gitdir:~/Documents/thonk/"]
     path = ~/.gitconfig-work
+[core]
+	excludesFile = /Users/luke/.gitignore_global

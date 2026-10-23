@@ -32,5 +32,15 @@
     {
         "key": "alt+cmd+b",
         "command": "-workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+alt+cmd+f",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Tuna: Open Project in Finder"
+    },
+    {
+        "key": "ctrl+alt+cmd+g",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Tuna: Open Project in Ghostty"
     }
 ]

@@ -37,29 +37,24 @@ alias zrl='source ~/.zshrc && echo "Zsh config reloaded"'
 
 unalias gst 2>/dev/null
 
-# search current diretory and subdirectories for git repos and show their status
+# Find Git repos under the given directory and show uncommitted changes.
 gst() {
   local base_dir="${1:-.}"
-  local current_git_root
-  local current_dir
+  local git_marker repo status_output
 
-  current_git_root=$(git rev-parse --show-toplevel 2>/dev/null)
-  current_dir=$(pwd)
+  while IFS= read -r -d '' git_marker; do
+    repo="${git_marker%/.git}"
 
-  if [[ -z "$current_git_root" ]]; then
-    echo "Not in a git repository"
-    return
-  fi
-
-  # If we're not at the root, only show files from current dir
-  if [[ "$current_dir" != "$current_git_root" ]]; then
-    echo "🔹 Repo: $current_dir"
-    git status -s -- "$current_dir"
-  else
-    # At root, show all changes
-    echo "🔹 Repo: $current_git_root"
-    git status -s
-  fi
+    if status_output=$(git -C "$repo" status --short 2>&1); then
+      if [[ -n "$status_output" ]]; then
+        printf '\n🔹 Repo: %s\n%s\n' "$repo" "$status_output"
+      fi
+    else
+      printf '\n⚠️ Repo: %s\n%s\n' "$repo" "$status_output" >&2
+    fi
+  done < <(
+    find "$base_dir" -name .git \( -type d -o -type f \) -print0 -prune
+  )
 }
 
 # pull latest for all git repos in current directory and subdirectories

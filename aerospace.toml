@@ -3,7 +3,7 @@ config-version = 2
 after-login-command = []
 
 after-startup-command = [
-    'exec-and-forget borders active_color="glow(0xFF85C088)" inactive_color="glow(0xff414550)" width=10.0 hidpi=on style=round'
+    'exec-and-forget borders active_color=0x88FFFFFF inactive_color=0x00000000 width=10.0 hidpi=on style=round'
 ]
 
 start-at-login = true
@@ -68,6 +68,10 @@ default-root-container-orientation = 'auto'
   if.window-title-regex-substring = 'Picture-in-Picture'
   run = ['layout floating']
 
+
+[[on-window-detected]]
+  if.app-id = 'com.apple.finder'
+  run = ['layout floating']
 [mode.main.binding]
 
     alt-slash = 'layout tiles horizontal vertical'
