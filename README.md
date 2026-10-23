@@ -1,5 +1,17 @@
 # luke's dotfiles
 
+After importing `tuna/config.toml`, install its helper and VS Code tasks:
+
+```bash
+sh scripts/setup_tuna.sh
+```
+
+This links the workspace helper into Tuna's Application Support folder and installs
+the global VS Code tasks used by **Finder here** and **Terminal here**. Existing
+regular files are backed up before linking. The VS Code commands use the open
+project folder. macOS may ask you to allow Tuna to control Finder, Ghostty, and
+System Events; the VS Code shortcuts also require Tuna's Accessibility access.
+
 
 ⚡ bootstrap a fresh mac
 

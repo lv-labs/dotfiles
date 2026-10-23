@@ -74,6 +74,9 @@ mkdir -p "$VSCODE_USER"
 [ -f "$DOTFILES/vscode/keybindings.json" ] && ln -sf "$DOTFILES/vscode/keybindings.json" "$VSCODE_USER/keybindings.json"
 [ -d "$DOTFILES/vscode/snippets" ] && ln -sfn "$DOTFILES/vscode/snippets" "$VSCODE_USER/snippets"
 
+# Tuna commands depend on the workspace helper and VS Code global tasks.
+sh "$DOTFILES/scripts/setup_tuna.sh"
+
 # kicad prefs (skip thonk libs until setup_kicad.sh)
 mkdir -p "$HOME/Library/Preferences/kicad"
 [ -d "$DOTFILES/kicad/9.0" ] && ln -sfn "$DOTFILES/kicad/9.0" "$HOME/Library/Preferences/kicad/9.0"

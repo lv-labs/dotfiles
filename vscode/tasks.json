@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Tuna: Open Project in Finder",
+            "type": "process",
+            "command": "/usr/bin/open",
+            "args": ["-a", "Finder", "${workspaceFolder}"],
+            "problemMatcher": [],
+            "presentation": { "reveal": "never", "focus": false, "panel": "dedicated", "close": true }
+        },
+        {
+            "label": "Tuna: Open Project in Ghostty",
+            "type": "process",
+            "command": "/usr/bin/osascript",
+            "args": [
+                "-e",
+                "on run argv\nset folderPath to item 1 of argv\ntell application \"Ghostty\"\nset cfg to new surface configuration\nset initial working directory of cfg to folderPath\nnew window with configuration cfg\nactivate\nend tell\nend run",
+                "${workspaceFolder}"
+            ],
+            "problemMatcher": [],
+            "presentation": { "reveal": "never", "focus": false, "panel": "dedicated", "close": true }
+        }
+    ]
+}
