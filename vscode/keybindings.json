@@ -42,5 +42,10 @@
         "key": "ctrl+alt+cmd+g",
         "command": "workbench.action.tasks.runTask",
         "args": "Tuna: Open Project in Ghostty"
+    },
+    {
+        "key": "ctrl+alt+cmd+c",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Tuna: Open Project in VS Code"
     }
 ]

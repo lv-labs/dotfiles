@@ -328,7 +328,7 @@ label = "Finder here"
 type = "command"
 [comboMode.bindings.destination.bindings.destination.command]
 type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'delay 0.25\ntell application \"System Events\"\n    repeat 30 times\n        set frontAppID to bundle identifier of first application process whose frontmost is true\n        if frontAppID is not \"com.brnbw.Tuna\" then exit repeat\n        delay 0.1\n    end repeat\nend tell\nif frontAppID is \"com.mitchellh.ghostty\" then\n    tell application \"Ghostty\"\n        set term to focused terminal of selected tab of front window\n        set folderPath to working directory of term\n    end tell\n    if folderPath is \"\" then error \"Ghostty has not reported a working directory.\"\n    tell application \"Finder\"\n        make new Finder window to (POSIX file folderPath)\n        activate\n    end tell\nelse if frontAppID is \"com.microsoft.VSCode\" then\n    tell application \"System Events\"\n        keystroke \"f\" using {command down, control down, option down}\n    end tell\nelse if frontAppID is \"com.apple.finder\" then\n    tell application \"Finder\"\n        set folderPath to POSIX path of (target of front Finder window as alias)\n        make new Finder window to (POSIX file folderPath)\n        activate\n    end tell\nelse\n    display alert \"Finder Here works from Ghostty, VS Code, or Finder.\"\nend if\n'\"'\"''"]
+subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" finder"]
 actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
 behavior = "run"
 presentation = "hidden"
@@ -358,7 +358,7 @@ label = "Terminal here"
 type = "command"
 [comboMode.bindings.destination.bindings.destination.command]
 type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.mitchellh.ghostty -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'delay 0.25\ntell application \"System Events\"\n    repeat 30 times\n        set frontAppID to bundle identifier of first application process whose frontmost is true\n        if frontAppID is not \"com.brnbw.Tuna\" then exit repeat\n        delay 0.1\n    end repeat\nend tell\nif frontAppID is \"com.brnbw.Tuna\" then error \"The previous app did not regain focus.\"\nif frontAppID is \"com.microsoft.VSCode\" then\n    tell application \"System Events\"\n        keystroke \"g\" using {command down, control down, option down}\n    end tell\nelse\n    tell application \"Finder\"\n        if (count of Finder windows) is 0 then\n            display alert \"Open a Finder folder or a VS Code project first.\"\n            return\n        end if\n        try\n            set folderPath to POSIX path of (target of front Finder window as alias)\n        on error\n            display alert \"Choose a regular folder in Finder first.\" message \"This Finder view does not have a folder path.\"\n            return\n        end try\n    end tell\n    tell application \"Ghostty\"\n        set cfg to new surface configuration\n        set initial working directory of cfg to folderPath\n        new window with configuration cfg\n        activate\n    end tell\nend if\n'\"'\"''"]
+subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" ghostty"]
 actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
 behavior = "run"
 presentation = "hidden"
@@ -388,7 +388,7 @@ label = "VS Code here"
 type = "command"
 [comboMode.bindings.destination.bindings.destination.command]
 type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.microsoft.VSCode -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'tell application \"Finder\"\n    if (count of Finder windows) is 0 then\n        display alert \"Open a Finder folder first.\"\n        return\n    end if\n    try\n        set folderPath to POSIX path of (target of front Finder window as alias)\n    on error\n        display alert \"Choose a regular folder in Finder first.\" message \"This Finder view does not have a folder path.\"\n        return\n    end try\nend tell\ndo shell script quoted form of \"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\" & \" --new-window \" & quoted form of folderPath\n'\"'\"''"]
+subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" vscode"]
 actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
 behavior = "run"
 presentation = "hidden"

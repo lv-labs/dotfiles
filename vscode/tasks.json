@@ -4,22 +4,56 @@
         {
             "label": "Tuna: Open Project in Finder",
             "type": "process",
-            "command": "/usr/bin/open",
-            "args": ["-a", "Finder", "${workspaceFolder}"],
+            "command": "/usr/bin/python3",
+            "args": [
+                "${env:HOME}/Library/Application Support/Tuna/scripts/open_here.py",
+                "finder",
+                "--folder",
+                "${workspaceFolder}"
+            ],
             "problemMatcher": [],
-            "presentation": { "reveal": "never", "focus": false, "panel": "dedicated", "close": true }
+            "presentation": {
+                "reveal": "never",
+                "focus": false,
+                "panel": "dedicated",
+                "close": true
+            }
         },
         {
             "label": "Tuna: Open Project in Ghostty",
             "type": "process",
-            "command": "/usr/bin/osascript",
+            "command": "/usr/bin/python3",
             "args": [
-                "-e",
-                "on run argv\nset folderPath to item 1 of argv\ntell application \"Ghostty\"\nset cfg to new surface configuration\nset initial working directory of cfg to folderPath\nnew window with configuration cfg\nactivate\nend tell\nend run",
+                "${env:HOME}/Library/Application Support/Tuna/scripts/open_here.py",
+                "ghostty",
+                "--folder",
                 "${workspaceFolder}"
             ],
             "problemMatcher": [],
-            "presentation": { "reveal": "never", "focus": false, "panel": "dedicated", "close": true }
+            "presentation": {
+                "reveal": "never",
+                "focus": false,
+                "panel": "dedicated",
+                "close": true
+            }
+        },
+        {
+            "label": "Tuna: Open Project in VS Code",
+            "type": "process",
+            "command": "/usr/bin/python3",
+            "args": [
+                "${env:HOME}/Library/Application Support/Tuna/scripts/open_here.py",
+                "vscode",
+                "--folder",
+                "${workspaceFolder}"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "never",
+                "focus": false,
+                "panel": "dedicated",
+                "close": true
+            }
         }
     ]
 }

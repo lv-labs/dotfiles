@@ -8,12 +8,12 @@ import sys
 import time
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--app-id', required=True)
     parser.add_argument('--reuse', action='store_true')
     parser.add_argument('command', nargs=argparse.REMAINDER)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     command = args.command
     if command[:1] == ['--']:
         command = command[1:]
