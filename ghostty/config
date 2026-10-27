@@ -10,3 +10,4 @@ window-padding-y = 8
 cursor-style = bar
 
 # Behavior
+macos-dock-drop-behavior = new-window
