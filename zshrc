@@ -48,6 +48,18 @@ alias gp="git push"
 alias gl="git pull"
 alias gs="git status"
 
+unalias grh 2>/dev/null
+
+grh() {
+  git rev-parse --show-toplevel >/dev/null 2>&1 || return
+  local reply
+  read -r "reply?Discard all uncommitted tracked changes? [y/N] "
+  if [[ "$reply" == [yY] ]]; then
+    git reset --hard HEAD
+  else
+    echo "Cancelled."
+  fi
+}
 
 unalias mkvenv 2>/dev/null
 mkvenv() {
