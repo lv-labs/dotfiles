@@ -2,7 +2,7 @@
     "raspberry-pi-pico.python3Path": "/usr/bin/python3",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
-    "workbench.colorTheme": "One Dark Pro Night Flat",
+    "workbench.colorTheme": "Dark Modern",
     "security.workspace.trust.untrustedFiles": "open",
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": "off",
@@ -11,5 +11,6 @@
         "editor.inlayHints.maximumLength": 0
     },
     "editor.accessibilitySupport": "off",
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "gitlens.graph.details.location": "auto"
 }

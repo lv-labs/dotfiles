@@ -29,7 +29,7 @@ source "$HOME/.config/zsh/fade.zsh"
 # Files and shell configuration ------------------------------------------------
 alias ll='ls -lh'
 alias la='ls -lha'
-alias zedit='nano ~/.zshrc'
+alias zedit='micro ~/.zshrc'
 alias zrl='source ~/.zshrc && echo "Zsh config reloaded"'
 
 # Git -------------------------------------------------------------------------
