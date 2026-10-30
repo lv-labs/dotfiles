@@ -12,5 +12,6 @@
     },
     "editor.accessibilitySupport": "off",
     "git.confirmSync": false,
-    "gitlens.graph.details.location": "auto"
+    "gitlens.graph.details.location": "auto",
+    "makefile.configureOnOpen": true
 }

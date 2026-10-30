@@ -9,7 +9,7 @@ path=(
   /Applications/KiCad/KiCad.app/Contents/Applications/gerbview.app/Contents/MacOS
   $path
 )
-
+export RACK_DIR="$HOME/.Rack-SDK"
 # Oh My Zsh -------------------------------------------------------------------
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""  # The separate Fade configuration handles the prompt.
