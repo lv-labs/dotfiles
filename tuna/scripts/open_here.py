@@ -1,17 +1,21 @@
 #!/usr/bin/python3
-"""Open Finder, Ghostty, or VS Code at the current app's folder via Tuna."""
+"""Open Finder, Ghostty, Rex, or VS Code at the current app's folder via Tuna."""
 
 import argparse
+import json
+import os
 from pathlib import Path
 import subprocess
 import sys
+from urllib.parse import unquote, urlsplit
 
 APP_IDS = {
     'finder': 'com.apple.finder',
     'ghostty': 'com.mitchellh.ghostty',
     'vscode': 'com.microsoft.VSCode',
+    'rex': 'com.superlogical.rex',
 }
-TASK_KEYS = {'finder': 'f', 'ghostty': 'g', 'vscode': 'c'}
+TASK_KEYS = {'finder': 'f', 'ghostty': 'g', 'vscode': 'c', 'rex': 'r'}
 
 # Wait for Tuna to dismiss so the source app, not the launcher, is inspected.
 SOURCE_SCRIPT = '''
@@ -37,6 +41,8 @@ else if sourceID is "com.mitchellh.ghostty" then
     end tell
     if folderPath is "" then error "Ghostty has not reported a working directory yet."
     return "folder:" & folderPath
+else if sourceID is "com.superlogical.rex" then
+    return "rex"
 else if sourceID is "com.apple.finder" then
     tell application "Finder"
         if (count of Finder windows) is 0 then error "Open a Finder folder first."
@@ -48,7 +54,7 @@ else if sourceID is "com.apple.finder" then
     end tell
     return "folder:" & folderPath
 else
-    error "Use this command from Finder, Ghostty, or a VS Code project."
+    error "Use this command from Finder, Ghostty, Rex, or a VS Code project."
 end if
 end run
 '''
@@ -84,10 +90,64 @@ def apple(script, *args):
     return result.stdout.rstrip('\n')
 
 
+def rex_cli():
+    candidates = [
+        Path(root) / app / 'Contents/Helpers/Rex Server.rex/Contents/MacOS/rex'
+        for root in ('/Applications', str(Path.home() / 'Applications'))
+        for app in ('Rex Beta.app', 'Rex.app')
+    ]
+    cli = next((path for path in candidates if path.is_file()), None)
+    if cli is None:
+        raise RuntimeError('Could not find the Rex CLI in the installed application.')
+    return str(cli)
+
+
+def rex_folder():
+    # Discard inherited terminal context: Tuna must target the focused Rex pane.
+    env = {key: value for key, value in os.environ.items()
+           if key not in ('REX_BLOCK', 'REX_SESSION', 'REX_CLIENT', 'REX_SERVER')}
+    result = subprocess.run(
+        [rex_cli(), '--autostart=false', 'block', 'call', 'pwd'],
+        capture_output=True, text=True, timeout=15, env=env,
+    )
+    if result.returncode:
+        raise RuntimeError(result.stderr.strip() or 'Could not read the Rex folder.')
+    try:
+        data = json.loads(result.stdout)
+    except ValueError:
+        raise RuntimeError('Rex returned an invalid working-directory response.')
+    folder = data.get('pwd') if isinstance(data, dict) else data
+    if not isinstance(folder, str) or not folder:
+        raise RuntimeError('Rex has not reported a working directory yet.')
+    # Rex reports OSC 7 file URLs, including the Mac's hostname and escaped spaces.
+    if folder.startswith('file://'):
+        folder = unquote(urlsplit(folder).path)
+    if not Path(folder).is_absolute():
+        raise RuntimeError('Rex did not report a local absolute folder: ' + folder)
+    return folder
+
+
+def open_rex(folder=None):
+    # Rex calls tabs within a session "windows"; this is not a macOS window.
+    cli = rex_cli()
+    result = subprocess.run(['/usr/bin/open', '-b', APP_IDS['rex']])
+    if result.returncode:
+        raise RuntimeError('Could not open Rex.')
+    command = [str(cli), 'window', 'new']
+    if folder is not None:
+        command += ['--cwd', folder]
+    result = subprocess.run(command, capture_output=True, text=True, timeout=20)
+    if result.returncode:
+        raise RuntimeError(result.stderr.strip() or 'Could not create a Rex tab.')
+    return 0
+
+
 def open_folder(destination, folder):
     folder = str(Path(folder).expanduser())
     if not Path(folder).is_dir():
         raise RuntimeError('The current folder is not available locally: ' + folder)
+    if destination == 'rex':
+        return open_rex(folder)
     from current_workspace import main as run_on_workspace
     if destination == 'vscode':
         code = Path('/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code')
@@ -105,11 +165,18 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('destination', choices=APP_IDS)
     parser.add_argument('--folder', help='Explicit project folder supplied by a VS Code task')
+    parser.add_argument('--new', action='store_true', help='Open a new Rex tab')
     args = parser.parse_args(argv)
+    if args.new and (args.destination != 'rex' or args.folder is not None):
+        parser.error('--new requires rex and cannot be combined with --folder')
     try:
+        if args.new:
+            return open_rex()
         if args.folder is not None:
             return open_folder(args.destination, args.folder)
         source = apple(SOURCE_SCRIPT, TASK_KEYS[args.destination])
+        if source == 'rex':
+            return open_folder(args.destination, rex_folder())
         if source == 'vscode':
             # VS Code resolves ${workspaceFolder}; do not guess from a window title.
             return 0

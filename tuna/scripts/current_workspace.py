@@ -20,19 +20,14 @@ def main(argv=None):
     if not command:
         parser.error('a command is required after --')
 
-    aerospace = shutil.which('aerospace')
-    if not aerospace:
-        for path in ('/opt/homebrew/bin/aerospace', '/usr/local/bin/aerospace'):
-            if shutil.which(path):
-                aerospace = path
-                break
+    manager = None
 
     def query(*arguments):
-        if not aerospace:
+        if not manager:
             return None
         try:
             result = subprocess.run(
-                [aerospace, *arguments], capture_output=True, text=True, timeout=3
+                [manager, *arguments], capture_output=True, text=True, timeout=3
             )
         except (OSError, subprocess.TimeoutExpired):
             return None
@@ -43,13 +38,36 @@ def main(argv=None):
                        '--format', '%{window-id}')
         return set(output.splitlines()) if output else set()
 
-    workspace = query('list-workspaces', '--focused')
+    # Prefer a running Dinky, retaining AeroSpace support on the other Mac.
+    workspace = None
+    using_dinky = False
+    for name, paths in (
+        ('dinky', ('/Applications/dinky.app/Contents/MacOS/dinky',
+                   '/opt/homebrew/bin/dinky', '/usr/local/bin/dinky')),
+        ('aerospace', ('/opt/homebrew/bin/aerospace', '/usr/local/bin/aerospace')),
+    ):
+        manager = shutil.which(name)
+        if not manager:
+            manager = next((path for path in paths if shutil.which(path)), None)
+        workspace = query('list-workspaces', '--focused')
+        if workspace:
+            using_dinky = name == 'dinky'
+            break
+
+    def focus(window):
+        if using_dinky:
+            # Dinky has no focus --window-id; --follow also focuses a window
+            # already on the destination workspace.
+            query('move-window-to-workspace', workspace, '--window-id', window, '--follow')
+        else:
+            query('focus', '--window-id', window)
+
     before = windows() if workspace else set()
     if workspace and args.reuse:
         existing = query('list-windows', '--workspace', workspace,
                          '--app-bundle-id', args.app_id, '--format', '%{window-id}')
         if existing:
-            query('focus', '--window-id', existing.splitlines()[0])
+            focus(existing.splitlines()[0])
             return 0
 
     result = subprocess.run(command)
@@ -61,8 +79,9 @@ def main(argv=None):
         candidates = windows() - before
         if candidates:
             for window in sorted(candidates):
-                query('move-node-to-workspace', '--window-id', window, workspace)
-            query('focus', '--window-id', sorted(candidates)[0])
+                query('move-window-to-workspace' if using_dinky else 'move-node-to-workspace',
+                      '--window-id', window, workspace)
+            focus(sorted(candidates)[0])
             return 0
         time.sleep(0.1)
     print('Tuna: no new window detected; command completed.', file=sys.stderr)

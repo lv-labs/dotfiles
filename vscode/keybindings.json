@@ -47,5 +47,10 @@
         "key": "ctrl+alt+cmd+c",
         "command": "workbench.action.tasks.runTask",
         "args": "Tuna: Open Project in VS Code"
+    },
+    {
+        "key": "ctrl+alt+cmd+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Tuna: Open Project in Rex"
     }
 ]

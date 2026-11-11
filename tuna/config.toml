@@ -364,6 +364,36 @@ behavior = "run"
 presentation = "hidden"
 
 [[comboMode.bindings]]
+key = "r"
+label = "Rex"
+[comboMode.bindings.destination]
+type = "group"
+
+[[comboMode.bindings.destination.bindings]]
+key = "n"
+label = "New Rex tab"
+[comboMode.bindings.destination.bindings.destination]
+type = "command"
+[comboMode.bindings.destination.bindings.destination.command]
+type = "savedCommand"
+subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" rex --new"]
+actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
+behavior = "run"
+presentation = "hidden"
+
+[[comboMode.bindings.destination.bindings]]
+key = "h"
+label = "Rex here"
+[comboMode.bindings.destination.bindings.destination]
+type = "command"
+[comboMode.bindings.destination.bindings.destination.command]
+type = "savedCommand"
+subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" rex"]
+actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
+behavior = "run"
+presentation = "hidden"
+
+[[comboMode.bindings]]
 key = "c"
 label = "Code"
 [comboMode.bindings.destination]

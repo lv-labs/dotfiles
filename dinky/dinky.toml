@@ -1,0 +1,134 @@
+#:schema https://dinky.rodeo/schemas/dinky.json
+# Linked from ~/.config/dinky/dinky.toml; saved changes reload automatically.
+# Migrated from ../aerospace.toml. See README.md for differences.
+start-at-login = true
+workspaces = 10
+follow-space-order = false
+default-layout = 'tiles'
+default-tiling = true
+follow-app-activation = true
+
+[accordion]
+padding = 48
+orientation = 'auto'
+
+[gaps]
+inner = { horizontal = 16, vertical = 16 }
+outer = { left = 16, bottom = 16, top = 16, right = 16 }
+
+[swipe]
+enabled = true
+
+[workspace-to-display]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'main'
+7 = 'main'
+8 = 'secondary'
+9 = 'secondary'
+10 = 'secondary' # AeroSpace workspace 0; retain the Alt-0 shortcut below.
+
+# Native borders replace the external borders startup command (ARGB -> RGBA).
+[borders]
+enabled = true
+width = 6
+active-color = '#2873ff'
+inactive-color = '#00000000'
+
+[[rules]]
+app-id = 'org.kicad.kicad'
+title = 'KiCad \d+\.\d+'
+run = 'layout floating'
+
+[[rules]]
+app-id = 'org.kicad.kicad'
+title = 'Assign Footprints'
+run = 'layout floating'
+
+[[rules]]
+app-id = 'org.kicad.kicad'
+title = 'Footprint Editor'
+run = 'layout floating'
+
+[[rules]]
+app-id = 'org.kicad.kicad'
+title = 'Symbol Editor'
+run = 'layout floating'
+
+[[rules]]
+app-id = 'app.zen-browser.zen'
+title = 'Picture-in-Picture'
+run = 'layout floating'
+
+[[rules]]
+app-id = 'com.apple.finder'
+run = 'layout floating'
+
+
+[modifiers]
+alt = 'left'
+
+[mode.main]
+alt-slash = 'layout h_tiles v_tiles'
+alt-comma = 'layout h_accordion v_accordion'
+alt-f = 'fullscreen'
+alt-shift-f = 'layout floating tiling'
+
+alt-left = 'focus left --boundaries all-monitors-outer-frame'
+alt-down = 'focus down'
+alt-up = 'focus up'
+alt-right = 'focus right --boundaries all-monitors-outer-frame'
+# Explicit cycling restores AeroSpace's focus-monitor --wrap-around next.
+alt-tab = 'exec-and-forget /usr/bin/python3 "$HOME/.config/dinky/focus-next-display.py"'
+
+# Directional moves stay within the workspace; Dinky has no move --boundaries.
+alt-shift-left = 'move left'
+alt-shift-down = 'move down'
+alt-shift-up = 'move up'
+alt-shift-right = 'move right'
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
+
+# prev/next traverse the focused display's workspaces in Dinky.
+ctrl-left = 'workspace prev'
+ctrl-right = 'workspace next'
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+alt-0 = 'workspace 10'
+
+alt-shift-1 = 'move-window-to-workspace 1'
+alt-shift-2 = 'move-window-to-workspace 2'
+alt-shift-3 = 'move-window-to-workspace 3'
+alt-shift-4 = 'move-window-to-workspace 4'
+alt-shift-5 = 'move-window-to-workspace 5'
+alt-shift-6 = 'move-window-to-workspace 6'
+alt-shift-7 = 'move-window-to-workspace 7'
+alt-shift-8 = 'move-window-to-workspace 8'
+alt-shift-9 = 'move-window-to-workspace 9'
+alt-shift-0 = 'move-window-to-workspace 10'
+
+# Closest equivalent: move this window, rather than its entire workspace.
+alt-shift-tab = 'move-window-to-display next --follow'
+alt-semicolon = 'mode service'
+
+# Restore only after recovering the original script and adapting it for Dinky.
+# alt-shift-c = 'exec-and-forget ~/.center-window.sh'
+
+[mode.service]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+alt-left = ['join-with left', 'mode main']
+alt-down = ['join-with down', 'mode main']
+alt-up = ['join-with up', 'mode main']
+alt-right = ['join-with right', 'mode main']

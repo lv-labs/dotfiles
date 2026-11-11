@@ -54,6 +54,24 @@
                 "panel": "dedicated",
                 "close": true
             }
+        },
+        {
+            "label": "Tuna: Open Project in Rex",
+            "type": "process",
+            "command": "/usr/bin/python3",
+            "args": [
+                "${env:HOME}/Library/Application Support/Tuna/scripts/open_here.py",
+                "rex",
+                "--folder",
+                "${workspaceFolder}"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "never",
+                "focus": false,
+                "panel": "dedicated",
+                "close": true
+            }
         }
     ]
 }

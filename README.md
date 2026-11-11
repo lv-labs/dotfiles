@@ -14,7 +14,8 @@ SSH keys, and work repositories are managed separately.
 | `gitconfig-work` | Git identity for repositories under `~/Documents/thonk/` | `~/.gitconfig-work` |
 | `.ssh/config` | Personal and work GitHub SSH host aliases | `~/.ssh/config` |
 | `ghostty/` | Terminal appearance and behaviour | `~/.config/ghostty` |
-| `aerospace.toml` | Window management and shortcuts | `~/.aerospace.toml` |
+| `dinky/dinky.toml` | Dinky window management and shortcuts | `~/.config/dinky/dinky.toml` |
+| `aerospace.toml` | Previous AeroSpace configuration, kept for reference / other Macs | `~/.aerospace.toml` |
 | `vscode/` | Settings, shortcuts, tasks, and extension list | VS Code's user settings folder |
 | `tuna/config.toml` | Live Tuna configuration | Select the repo’s `tuna/` folder in Tuna Settings |
 | `tuna/scripts/current_workspace.py` | Keep new windows on the current workspace | Linked by `scripts/setup_tuna.sh` |
@@ -90,19 +91,52 @@ The personal config references `~/.gitignore_global`, which is currently missing
 on the personal Mac. Restore the intended ignore rules or remove that setting
 when deciding how global ignores should work.
 
-### Ghostty and AeroSpace
+### Ghostty and Dinky
 
-Install the apps and the JetBrainsMono Nerd Font used by Ghostty. AeroSpace's
-configuration also invokes `borders`; install it if keeping that appearance.
+Install the apps and the JetBrainsMono Nerd Font used by Ghostty. Dinky uses its
+built-in borders, with the previous border width and colours.
 
 ```sh
 mkdir -p "$HOME/.config"
 ln -s "$DOTFILES/ghostty" "$HOME/.config/ghostty"
-ln -s "$DOTFILES/aerospace.toml" "$HOME/.aerospace.toml"
+mkdir -p "$HOME/.config/dinky"
+ln -s "$DOTFILES/dinky/dinky.toml" "$HOME/.config/dinky/dinky.toml"
+ln -s "$DOTFILES/dinky/focus-next-display.py" "$HOME/.config/dinky/focus-next-display.py"
 ```
 
-The centre-window shortcut depends on a work-machine script that still needs
-to be migrated; see the outstanding items below.
+Back up Dinky's generated `dinky.toml` before linking if it already exists.
+Dinky follows the symlink and reloads on save. Validate the config with:
+
+```sh
+/Applications/dinky.app/Contents/MacOS/dinky doctor --config "$DOTFILES/dinky/dinky.toml"
+```
+
+Quit AeroSpace before running Dinky, and turn off AeroSpace's launch-at-login
+setting on machines you migrate. Stop any separately running `borders` service
+if it is still drawing borders. Dinky is configured to start at login.
+
+The migration preserves the 20-point inner / 16-point outer gaps, 20-point
+accordion padding, floating rules, service mode, and most shortcuts. Differences
+from AeroSpace, as described in Dinky's [configuration](https://dinky.rodeo/configuration/)
+and [commands](https://dinky.rodeo/commands/) references:
+
+- Workspaces use native macOS Spaces. There are ten: 1–7 on the main display,
+  8–10 on the secondary (falling back to main when disconnected). `alt-0` and
+  `alt-shift-0` select / move to workspace 10, replacing AeroSpace's workspace 0.
+- `cmd-left/right` traverse only the focused display's workspaces.
+- `alt-tab` runs the linked `focus-next-display.py` helper to cycle through
+  connected displays, wrapping back to the first.
+- `alt-shift-left/right` move within the workspace. Use `alt-shift-tab` to move
+  the focused window to the next display and follow it; Dinky cannot move an
+  entire workspace to another display via a command.
+- `alt-slash` and `alt-comma` select tiles / accordion and toggle their orientation.
+  Dinky's default tiles layout splits the focused tile along its longer side;
+  AeroSpace's container normalization options have no direct config equivalent.
+- `alt-shift-c` is commented out because the centre-window script is missing;
+  see the outstanding items below.
+
+The original `aerospace.toml` remains available for other Macs. To restore it,
+link it to `~/.aerospace.toml`; its startup command still requires `borders`.
 
 ### VS Code and Tuna
 
@@ -125,23 +159,33 @@ Tuna saves changes back to `tuna/config.toml`. Back up before editing it externa
 then run `open "tuna://config/reload"` to reload. Some existing commands still
 include `/Users/luke` paths, so review them on another account.
 
-In Tuna Combo Mode, the existing sequences work from Finder, Ghostty, or VS Code:
+In Tuna Combo Mode, the existing sequences work from Finder, Ghostty, Rex, or VS Code:
 
 | Sequence | Action |
 | --- | --- |
 | `f` → `h` | New Finder window here |
 | `g` → `h` | New Ghostty window here |
 | `c` → `h` | New VS Code window here |
+| `r` → `n` | New Rex tab |
+| `r` → `h` | New Rex tab here |
 
 “Here” means the front Finder window’s folder, the focused Ghostty terminal’s
-working directory, or VS Code’s project folder. Opening the same app creates
+working directory, the focused Rex terminal’s reported working directory, or
+VS Code’s project folder. Opening the same app creates
 another window at that folder. VS Code needs an open local project; with multiple
 workspace folders it may ask which folder to use. Remote terminal paths must be
 available locally; these commands do not establish SSH or remote VS Code sessions.
 
+Rex actions use its bundled CLI and reuse the current Rex session. Open Rex with
+a local session first. Rex also works as a source for every “here” action, using
+its terminal `pwd` API. These bindings do not change macOS defaults.
+
+The workspace helper prefers a running Dinky and falls back to AeroSpace on
+machines still using it. It uses Dinky's bundled CLI, so no CLI symlink is needed.
+
 The shared `open_here.py` helper waits for Tuna to dismiss, identifies the source
 app, and delegates window placement to `current_workspace.py`. VS Code supplies
-its project folder through the linked tasks and `ctrl+alt+cmd+f/g/c` keybindings.
+its project folder through the linked tasks and `ctrl+alt+cmd+f/g/c/r` keybindings.
 Unsupported source apps produce an error rather than opening an unrelated Finder
 folder. Allow the necessary Accessibility and Automation access when macOS
 requests it.
@@ -168,8 +212,9 @@ Keep the existing references until the real scripts have been copied and checked
   the personal Mac. Confirm whether it is still wanted and recover it if so.
 
 Do not replace these with guessed implementations; the work-machine copies
-are the source to review. Both the Gerber and centre-window shortcuts remain
-configured but need their missing scripts on this Mac.
+are the source to review. The Gerber and old AeroSpace centre-window shortcuts
+remain configured but need their missing scripts on this Mac; Dinky's
+centre-window shortcut is commented out until the script is recovered and adapted.
 
 ## Keeping this repository current
 
