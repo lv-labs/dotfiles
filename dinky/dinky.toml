@@ -6,7 +6,11 @@ workspaces = 10
 follow-space-order = false
 default-layout = 'tiles'
 default-tiling = true
-follow-app-activation = true
+
+# PIA's menu bar popover should not switch to its previous workspace.
+[follow-app-activation]
+enabled = true
+exclude-apps = ['com.privateinternetaccess.vpn']
 
 # Slack is the master on workspace 8; other windows stack to its right.
 [workspace.8]
@@ -43,7 +47,7 @@ enabled = true
 [borders]
 enabled = true
 width = 6
-active-color = '#B96DB9'
+active-color = '#9e79c6'
 inactive-color = '#00000000'
 
 # KiCad auxiliary windows stay tiled and fill their workspace on opening.
