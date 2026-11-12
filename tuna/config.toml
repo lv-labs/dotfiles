@@ -33,12 +33,6 @@ sortOrders = []
         kind = 'none'
 
     [[catalogs.globalScopes]]
-    catalogIdentifier = 'tuna.color-tools'
-
-        [catalogs.globalScopes.scope]
-        kind = 'none'
-
-    [[catalogs.globalScopes]]
     catalogIdentifier = 'tuna.combo-actions'
 
         [catalogs.globalScopes.scope]
@@ -225,292 +219,459 @@ sortOrders = []
         [catalogs.globalScopes.scope]
         kind = 'none'
 
+[[comboMode.bindings]]
+key = 'k'
+label = 'KiCad'
+
+    [comboMode.bindings.destination]
+    type = 'group'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'n'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    "text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id org.kicad.kicad -- /usr/bin/open -n /Applications/KiCad/KiCad.app --args --new"
+                ]
+                type = 'savedCommand'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'o'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    "text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id org.kicad.kicad --reuse -- /usr/bin/open /Applications/KiCad/KiCad.app"
+                ]
+                type = 'savedCommand'
 
 [[comboMode.bindings]]
-key = "k"
-label = "KiCad"
-[comboMode.bindings.destination]
-type = "group"
+iconPath = 'folder'
+key = 'f'
+label = 'Folders'
 
-[[comboMode.bindings.destination.bindings]]
-key = "n"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id org.kicad.kicad -- /usr/bin/open -n /Applications/KiCad/KiCad.app --args --new"]
-type = "savedCommand"
+    [comboMode.bindings.destination]
+    type = 'group'
 
-[[comboMode.bindings.destination.bindings]]
-key = "o"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id org.kicad.kicad --reuse -- /usr/bin/open /Applications/KiCad/KiCad.app"]
-type = "savedCommand"
+        [[comboMode.bindings.destination.bindings]]
+        key = 'l'
+        label = 'Luke'
 
-[[comboMode.bindings]]
-key = "f"
-label = "Folders"
-iconPath = "folder"
-[comboMode.bindings.destination]
-type = "group"
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
 
-[[comboMode.bindings.destination.bindings]]
-key = "l"
-label = "Luke"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'tell application \"Finder\"\nmake new Finder window to (POSIX file \"/Users/luke\")\nactivate\nend tell'\"'\"''"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '"'"'tell application "Finder"
+make new Finder window to (POSIX file "/Users/luke")
+activate
+end tell'"'"'''''
+                ]
+                type = 'savedCommand'
 
-[[comboMode.bindings.destination.bindings]]
-key = "t"
-label = "Thonk"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'tell application \"Finder\"\nmake new Finder window to (POSIX file \"/Users/luke/Documents/thonk\")\nactivate\nend tell'\"'\"''"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+        [[comboMode.bindings.destination.bindings]]
+        key = 't'
+        label = 'Thonk'
 
-[[comboMode.bindings.destination.bindings]]
-key = "d"
-label = "Thonk Modules"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'tell application \"Finder\"\nmake new Finder window to (POSIX file \"/Users/luke/Documents/thonk/thonk-modules\")\nactivate\nend tell'\"'\"''"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
 
-[[comboMode.bindings.destination.bindings]]
-key = "r"
-label = "R&D — Luke"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'tell application \"Finder\"\nmake new Finder window to (POSIX file \"/Users/luke/Documents/thonk/r-and-d/luke\")\nactivate\nend tell'\"'\"''"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '"'"'tell application "Finder"
+make new Finder window to (POSIX file "/Users/luke/Documents/thonk")
+activate
+end tell'"'"'''''
+                ]
+                type = 'savedCommand'
 
-[[comboMode.bindings.destination.bindings]]
-key = "m"
-label = "Music Thing"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'tell application \"Finder\"\nmake new Finder window to (POSIX file \"/Users/luke/Documents/music-thing\")\nactivate\nend tell'\"'\"''"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+        [[comboMode.bindings.destination.bindings]]
+        key = 'd'
+        label = 'Thonk Modules'
 
-[[comboMode.bindings.destination.bindings]]
-key = "h"
-label = "Finder here"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" finder"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
 
-[[comboMode.bindings]]
-key = "g"
-label = "Ghostty"
-[comboMode.bindings.destination]
-type = "group"
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '"'"'tell application "Finder"
+make new Finder window to (POSIX file "/Users/luke/Documents/thonk/thonk-modules")
+activate
+end tell'"'"'''''
+                ]
+                type = 'savedCommand'
 
-[[comboMode.bindings.destination.bindings]]
-key = "n"
-label = "New terminal"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.mitchellh.ghostty -- /bin/sh -c '/usr/bin/osascript -e '\"'\"'tell application \"Ghostty\"\nnew window\nactivate\nend tell\n'\"'\"''"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+        [[comboMode.bindings.destination.bindings]]
+        key = 'r'
+        label = "R&D \u2014 Luke"
 
-[[comboMode.bindings.destination.bindings]]
-key = "h"
-label = "Terminal here"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" ghostty"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '"'"'tell application "Finder"
+make new Finder window to (POSIX file "/Users/luke/Documents/thonk/r-and-d/luke")
+activate
+end tell'"'"'''''
+                ]
+                type = 'savedCommand'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'm'
+        label = 'Music Thing'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.apple.finder -- /bin/sh -c '/usr/bin/osascript -e '"'"'tell application "Finder"
+make new Finder window to (POSIX file "/Users/luke/Documents/music-thing")
+activate
+end tell'"'"'''''
+                ]
+                type = 'savedCommand'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'h'
+        label = 'Finder here'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [ 'text:/usr/bin/python3 "$HOME/Library/Application Support/Tuna/scripts/open_here.py" finder' ]
+                type = 'savedCommand'
 
 [[comboMode.bindings]]
-key = "r"
-label = "Rex"
-[comboMode.bindings.destination]
-type = "group"
+key = 'g'
+label = 'Ghostty'
 
-[[comboMode.bindings.destination.bindings]]
-key = "n"
-label = "New Rex tab"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" rex --new"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+    [comboMode.bindings.destination]
+    type = 'group'
 
-[[comboMode.bindings.destination.bindings]]
-key = "h"
-label = "Rex here"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" rex"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+        [[comboMode.bindings.destination.bindings]]
+        key = 'n'
+        label = 'New terminal'
 
-[[comboMode.bindings]]
-key = "c"
-label = "Code"
-[comboMode.bindings.destination]
-type = "group"
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
 
-[[comboMode.bindings.destination.bindings]]
-key = "n"
-label = "New VS Code window"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.microsoft.VSCode -- /bin/sh -c ''\"'\"'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'\"'\"' --new-window'"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.mitchellh.ghostty -- /bin/sh -c '/usr/bin/osascript -e '"'"'tell application "Ghostty"
+new window
+activate
+end tell
+'"'"'''''
+                ]
+                type = 'savedCommand'
 
-[[comboMode.bindings.destination.bindings]]
-key = "h"
-label = "VS Code here"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/python3 \"$HOME/Library/Application Support/Tuna/scripts/open_here.py\" vscode"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+        [[comboMode.bindings.destination.bindings]]
+        key = 'h'
+        label = 'Terminal here'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [ 'text:/usr/bin/python3 "$HOME/Library/Application Support/Tuna/scripts/open_here.py" ghostty' ]
+                type = 'savedCommand'
 
 [[comboMode.bindings]]
-key = "p"
-label = "Picker"
-iconPath = "folder"
-[comboMode.bindings.destination]
-type = "group"
+key = 'r'
+label = 'Rex'
 
-[[comboMode.bindings.destination.bindings]]
-key = "l"
-label = "Luke"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.\ndelay 0.25\ntell application \"System Events\"\n    repeat 30 times\n        set frontAppID to bundle identifier of first application process whose frontmost is true\n        if frontAppID is not \"com.brnbw.Tuna\" then exit repeat\n        delay 0.1\n    end repeat\n    if frontAppID is \"com.brnbw.Tuna\" then error \"The file picker did not regain focus.\"\n    keystroke \"g\" using {command down, shift down}\n    delay 0.4\n    keystroke \"a\" using command down\n    keystroke \"/Users/luke\"\n    delay 0.15\n    key code 36\nend tell\n'"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+    [comboMode.bindings.destination]
+    type = 'group'
 
-[[comboMode.bindings.destination.bindings]]
-key = "t"
-label = "Thonk"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.\ndelay 0.25\ntell application \"System Events\"\n    repeat 30 times\n        set frontAppID to bundle identifier of first application process whose frontmost is true\n        if frontAppID is not \"com.brnbw.Tuna\" then exit repeat\n        delay 0.1\n    end repeat\n    if frontAppID is \"com.brnbw.Tuna\" then error \"The file picker did not regain focus.\"\n    keystroke \"g\" using {command down, shift down}\n    delay 0.4\n    keystroke \"a\" using command down\n    keystroke \"/Users/luke/Documents/thonk\"\n    delay 0.15\n    key code 36\nend tell\n'"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+        [[comboMode.bindings.destination.bindings]]
+        key = 'n'
+        label = 'New Rex tab'
 
-[[comboMode.bindings.destination.bindings]]
-key = "d"
-label = "Thonk Modules"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.\ndelay 0.25\ntell application \"System Events\"\n    repeat 30 times\n        set frontAppID to bundle identifier of first application process whose frontmost is true\n        if frontAppID is not \"com.brnbw.Tuna\" then exit repeat\n        delay 0.1\n    end repeat\n    if frontAppID is \"com.brnbw.Tuna\" then error \"The file picker did not regain focus.\"\n    keystroke \"g\" using {command down, shift down}\n    delay 0.4\n    keystroke \"a\" using command down\n    keystroke \"/Users/luke/Documents/thonk/thonk-modules\"\n    delay 0.15\n    key code 36\nend tell\n'"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
 
-[[comboMode.bindings.destination.bindings]]
-key = "r"
-label = "R&D — Luke"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.\ndelay 0.25\ntell application \"System Events\"\n    repeat 30 times\n        set frontAppID to bundle identifier of first application process whose frontmost is true\n        if frontAppID is not \"com.brnbw.Tuna\" then exit repeat\n        delay 0.1\n    end repeat\n    if frontAppID is \"com.brnbw.Tuna\" then error \"The file picker did not regain focus.\"\n    keystroke \"g\" using {command down, shift down}\n    delay 0.4\n    keystroke \"a\" using command down\n    keystroke \"/Users/luke/Documents/thonk/r-and-d/luke\"\n    delay 0.15\n    key code 36\nend tell\n'"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [ 'text:/usr/bin/python3 "$HOME/Library/Application Support/Tuna/scripts/open_here.py" rex --new' ]
+                type = 'savedCommand'
 
-[[comboMode.bindings.destination.bindings]]
-key = "m"
-label = "Music Thing"
-[comboMode.bindings.destination.bindings.destination]
-type = "command"
-[comboMode.bindings.destination.bindings.destination.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.\ndelay 0.25\ntell application \"System Events\"\n    repeat 30 times\n        set frontAppID to bundle identifier of first application process whose frontmost is true\n        if frontAppID is not \"com.brnbw.Tuna\" then exit repeat\n        delay 0.1\n    end repeat\n    if frontAppID is \"com.brnbw.Tuna\" then error \"The file picker did not regain focus.\"\n    keystroke \"g\" using {command down, shift down}\n    delay 0.4\n    keystroke \"a\" using command down\n    keystroke \"/Users/luke/Documents/music-thing\"\n    delay 0.15\n    key code 36\nend tell\n'"]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+        [[comboMode.bindings.destination.bindings]]
+        key = 'h'
+        label = 'Rex here'
 
-[hotkeys]
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [ 'text:/usr/bin/python3 "$HOME/Library/Application Support/Tuna/scripts/open_here.py" rex' ]
+                type = 'savedCommand'
+
+[[comboMode.bindings]]
+key = 'c'
+label = 'Code'
+
+    [comboMode.bindings.destination]
+    type = 'group'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'n'
+        label = 'New VS Code window'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    "text:/usr/bin/python3 '/Users/luke/Library/Application Support/Tuna/scripts/current_workspace.py' --app-id com.microsoft.VSCode -- /bin/sh -c ''\"'\"'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'\"'\"' --new-window'"
+                ]
+                type = 'savedCommand'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'h'
+        label = 'VS Code here'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [ 'text:/usr/bin/python3 "$HOME/Library/Application Support/Tuna/scripts/open_here.py" vscode' ]
+                type = 'savedCommand'
+
+[[comboMode.bindings]]
+iconPath = 'folder'
+key = 'p'
+label = 'Picker'
+
+    [comboMode.bindings.destination]
+    type = 'group'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'l'
+        label = 'Luke'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.
+delay 0.25
+tell application "System Events"
+    repeat 30 times
+        set frontAppID to bundle identifier of first application process whose frontmost is true
+        if frontAppID is not "com.brnbw.Tuna" then exit repeat
+        delay 0.1
+    end repeat
+    if frontAppID is "com.brnbw.Tuna" then error "The file picker did not regain focus."
+    keystroke "g" using {command down, shift down}
+    delay 0.4
+    keystroke "a" using command down
+    keystroke "/Users/luke"
+    delay 0.15
+    key code 36
+end tell
+''''
+                ]
+                type = 'savedCommand'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 't'
+        label = 'Thonk'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.
+delay 0.25
+tell application "System Events"
+    repeat 30 times
+        set frontAppID to bundle identifier of first application process whose frontmost is true
+        if frontAppID is not "com.brnbw.Tuna" then exit repeat
+        delay 0.1
+    end repeat
+    if frontAppID is "com.brnbw.Tuna" then error "The file picker did not regain focus."
+    keystroke "g" using {command down, shift down}
+    delay 0.4
+    keystroke "a" using command down
+    keystroke "/Users/luke/Documents/thonk"
+    delay 0.15
+    key code 36
+end tell
+''''
+                ]
+                type = 'savedCommand'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'd'
+        label = 'Thonk Modules'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.
+delay 0.25
+tell application "System Events"
+    repeat 30 times
+        set frontAppID to bundle identifier of first application process whose frontmost is true
+        if frontAppID is not "com.brnbw.Tuna" then exit repeat
+        delay 0.1
+    end repeat
+    if frontAppID is "com.brnbw.Tuna" then error "The file picker did not regain focus."
+    keystroke "g" using {command down, shift down}
+    delay 0.4
+    keystroke "a" using command down
+    keystroke "/Users/luke/Documents/thonk/thonk-modules"
+    delay 0.15
+    key code 36
+end tell
+''''
+                ]
+                type = 'savedCommand'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'r'
+        label = "R&D \u2014 Luke"
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.
+delay 0.25
+tell application "System Events"
+    repeat 30 times
+        set frontAppID to bundle identifier of first application process whose frontmost is true
+        if frontAppID is not "com.brnbw.Tuna" then exit repeat
+        delay 0.1
+    end repeat
+    if frontAppID is "com.brnbw.Tuna" then error "The file picker did not regain focus."
+    keystroke "g" using {command down, shift down}
+    delay 0.4
+    keystroke "a" using command down
+    keystroke "/Users/luke/Documents/thonk/r-and-d/luke"
+    delay 0.15
+    key code 36
+end tell
+''''
+                ]
+                type = 'savedCommand'
+
+        [[comboMode.bindings.destination.bindings]]
+        key = 'm'
+        label = 'Music Thing'
+
+            [comboMode.bindings.destination.bindings.destination]
+            type = 'command'
+
+                [comboMode.bindings.destination.bindings.destination.command]
+                actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+                behavior = 'run'
+                presentation = 'hidden'
+                subjectIdentifiers = [
+                    '''text:/usr/bin/osascript -e '-- Give Tuna time to dismiss and return focus to the file picker.
+delay 0.25
+tell application "System Events"
+    repeat 30 times
+        set frontAppID to bundle identifier of first application process whose frontmost is true
+        if frontAppID is not "com.brnbw.Tuna" then exit repeat
+        delay 0.1
+    end repeat
+    if frontAppID is "com.brnbw.Tuna" then error "The file picker did not regain focus."
+    keystroke "g" using {command down, shift down}
+    delay 0.4
+    keystroke "a" using command down
+    keystroke "/Users/luke/Documents/music-thing"
+    delay 0.15
+    key code 36
+end tell
+''''
+                ]
+                type = 'savedCommand'
+
+[hotkeys.app.activate]
+carbonKeyCode = 49
+carbonModifiers = 256
+
+[hotkeys.app.comboMode]
+carbonKeyCode = 49
+carbonModifiers = 2048
 
 [[hotkeys.custom]]
-id = "A30C9382-8CCE-43F7-B973-F783B5C20F9F"
-[hotkeys.custom.shortcut]
-carbonKeyCode = 49
-carbonModifiers = 6144
-[hotkeys.custom.command]
-type = "savedCommand"
-subjectIdentifiers = ["text:/usr/bin/open \"tuna://combo\""]
-actionIdentifier = "tuna.common-actions/run-text-as-shell-command"
-behavior = "run"
-presentation = "hidden"
+id = 'A30C9382-8CCE-43F7-B973-F783B5C20F9F'
 
-    [hotkeys.app.activate]
+    [hotkeys.custom.command]
+    actionIdentifier = 'tuna.common-actions/run-text-as-shell-command'
+    behavior = 'run'
+    presentation = 'hidden'
+    subjectIdentifiers = [ 'text:/usr/bin/open "tuna://combo"' ]
+    type = 'savedCommand'
+
+    [hotkeys.custom.shortcut]
     carbonKeyCode = 49
-    carbonModifiers = 256
-
-    [hotkeys.app.comboMode]
-    carbonKeyCode = 49
-    carbonModifiers = 2048
-
-[settings]
-screenPreference = 'primary'
+    carbonModifiers = 6144

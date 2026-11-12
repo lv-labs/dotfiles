@@ -8,6 +8,14 @@ default-layout = 'tiles'
 default-tiling = true
 follow-app-activation = true
 
+# Slack is the master on workspace 8; other windows stack to its right.
+[workspace.8]
+layout = 'master'
+
+[master]
+side = 'left'
+size = 0.4
+
 [accordion]
 padding = 48
 orientation = 'auto'
@@ -35,28 +43,29 @@ enabled = true
 [borders]
 enabled = true
 width = 6
-active-color = '#2873ff'
+active-color = '#B96DB9'
 inactive-color = '#00000000'
 
+# KiCad auxiliary windows stay tiled and fill their workspace on opening.
 [[rules]]
 app-id = 'org.kicad.kicad'
 title = 'KiCad \d+\.\d+'
-run = 'layout floating'
+run = ['layout tiling', 'fullscreen']
 
 [[rules]]
 app-id = 'org.kicad.kicad'
 title = 'Assign Footprints'
-run = 'layout floating'
+run = ['layout tiling', 'fullscreen']
 
 [[rules]]
 app-id = 'org.kicad.kicad'
 title = 'Footprint Editor'
-run = 'layout floating'
+run = ['layout tiling', 'fullscreen']
 
 [[rules]]
 app-id = 'org.kicad.kicad'
 title = 'Symbol Editor'
-run = 'layout floating'
+run = ['layout tiling', 'fullscreen']
 
 [[rules]]
 app-id = 'app.zen-browser.zen'
@@ -66,6 +75,12 @@ run = 'layout floating'
 [[rules]]
 app-id = 'com.apple.finder'
 run = 'layout floating'
+
+[[rules]]
+app-id = 'com.tinyspeck.slackmacgap'
+kind = 'normal'
+# Entering master selects this window as master; re-enter even if already master.
+run = ['move-window-to-workspace 8', 'workspace-layout dwindle', 'workspace-layout master']
 
 
 [modifiers]

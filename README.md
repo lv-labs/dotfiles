@@ -138,6 +138,15 @@ and [commands](https://dinky.rodeo/commands/) references:
 The original `aerospace.toml` remains available for other Macs. To restore it,
 link it to `~/.aerospace.toml`; its startup command still requires `borders`.
 
+Workspace 8 uses the master layout. New normal Slack windows go there and take
+the master position on the left (60% of the available width), with other windows
+stacked on the right. Slack dialogs keep Dinky's usual floating behaviour.
+
+KiCad's manager, Assign Footprints, Footprint Editor, and Symbol Editor windows
+open tiled and in Dinky fullscreen, filling the current workspace while keeping
+their place in the layout. `alt-f` returns them to their tile. PCB Editor and
+Schematic Editor keep their normal tiling behaviour.
+
 ### VS Code and Tuna
 
 ```sh
