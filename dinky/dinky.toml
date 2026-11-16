@@ -47,14 +47,14 @@ enabled = true
 [borders]
 enabled = true
 width = 6
-active-color = '#9e79c6'
-inactive-color = '#00000000'
+active-color = '#8cf342cb'
+inactive-color = '#5d5d5d00'
 
 # KiCad auxiliary windows stay tiled and fill their workspace on opening.
 [[rules]]
 app-id = 'org.kicad.kicad'
 title = 'KiCad \d+\.\d+'
-run = ['layout tiling', 'fullscreen']
+run = ['layout floating', 'fullscreen']
 
 [[rules]]
 app-id = 'org.kicad.kicad'
