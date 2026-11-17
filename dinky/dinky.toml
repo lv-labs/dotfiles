@@ -89,6 +89,10 @@ kind = 'normal'
 # Entering master selects this window as master; re-enter even if already master.
 run = ['move-window-to-workspace 8', 'workspace-layout dwindle', 'workspace-layout master']
 
+[[rules]]
+app-id = 'de.rme-audio.TotalmixFX'
+run = 'layout floating'
+
 
 [modifiers]
 alt = 'left'
