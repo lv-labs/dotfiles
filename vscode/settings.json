@@ -13,5 +13,8 @@
     "editor.accessibilitySupport": "off",
     "git.confirmSync": false,
     "gitlens.graph.details.location": "auto",
-    "makefile.configureOnOpen": true
+    "makefile.configureOnOpen": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
