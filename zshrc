@@ -22,6 +22,9 @@ plugins=(
 )
 source "$ZSH/oh-my-zsh.sh"
 
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH="$JAVA_HOME/bin:$PATH"
+
 # Completion and prompt -------------------------------------------------------
 zstyle ':completion:*' menu select
 source "$HOME/.config/zsh/fade.zsh"

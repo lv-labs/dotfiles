@@ -21,7 +21,7 @@ side = 'left'
 size = 0.4
 
 [accordion]
-padding = 48
+padding = 36
 orientation = 'auto'
 
 [gaps]
@@ -72,6 +72,11 @@ run = ['layout tiling', 'fullscreen']
 [[rules]]
 app-id = 'org.kicad.kicad'
 title = 'Symbol Editor'
+run = ['layout tiling', 'fullscreen']
+
+[[rules]]
+app-id = 'org.kicad.kicad'
+title = 'Symbol Fields Table'
 run = ['layout tiling', 'fullscreen']
 
 [[rules]]
